@@ -1,0 +1,314 @@
+body{
+  color: rgb(221, 221, 221)
+}
+
+a{
+  color: rgb(241, 241, 241)
+}
+
+a:hover{
+  text-decoration: none;
+  color: rgb(206, 206, 206)
+}
+
+
+/* Header--------------------- */
+#header{
+  min-height: 100px;
+  background-image: url("../image/pic2.jpg");
+  background-repeat: no-repeat;
+  background-position: center -220px;
+  padding: 20px 0
+}
+
+#logo{
+}
+
+#logo img{
+  width: 50%;
+  transition: ease 1.6s
+}
+#logo img:hover{
+  transform: rotate(270deg)
+}
+#search-box{ 
+  padding-top: 50px
+}
+
+#inputsearch{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(206, 206, 206)
+}
+
+#login{
+  text-align: right   
+}
+#hcontact{
+  padding-top: 30px
+}
+
+
+/* Navigator */
+#navigator{
+  min-height: 50px;
+  background-color: rgb(36, 36, 36);
+  z-index: 1000;
+}
+#navigator a:hover{
+  color: rgb(163, 163, 163)
+}
+.nav-item{
+  margin: 10px 0px;
+  padding: 5px 32px
+}
+.nav-active{
+  background-color: rgb(24, 24, 24);
+  border-radius: 5px;
+}
+.nav-active a{
+  color: rgb(163, 163, 163);
+}
+.nav-item:hover{
+  background-color: rgb(24, 24, 24);
+  border-radius: 5px;
+}
+
+#mycart{
+  text-align: right;
+  margin: 10px 0;
+  padding: 5px 0px
+}
+
+#mycart-box{
+  text-align: right;
+  text-align: center;
+  border-radius: 0  0 5px 5px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgb(36, 36, 36);
+  overflow: hidden;
+  transition: ease 1s;
+  margin-left:30px;
+}
+
+#mycart:hover + div>div#mycart-box{
+  height: 100px;
+}
+.nav a{text-decoration: none;}
+ul {
+  list-style: none;
+}
+.nav li{position: relative;}
+.nav li ul {
+  position: absolute;top:30px;left: 0;background-color: rgb(36, 36, 36);display: none;width: 150px;text-align: left;
+  padding-top: 15px;line-height: 2em;
+}
+.nav ul ul {
+  left: 110px; top: 0px;
+}
+/*social network*/
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social {
+  position: fixed;
+  top: 240px;
+
+}
+.social ul {
+  padding: 0px;
+  -webkit-transform: translate(-270px, 0);
+  -moz-transform: translate(-270px, 0);
+  -ms-transform: translate(-270px, 0);
+  -o-transform: translate(-270px, 0);
+  transform: translate(-270px, 0);
+}
+.social ul li {
+  display: block;
+  margin: -5px;
+  background: rgba(0, 0, 0, 0.36);
+  width: 300px;
+  text-align: right;
+  padding: 10px;
+  -webkit-border-radius: 0 30px 30px 0;
+  -moz-border-radius: 0 30px 30px 0;
+  border-radius: 0 30px 30px 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.social ul li:hover {
+  -webkit-transform: translate(110px, 0);
+  -moz-transform: translate(110px, 0);
+  -ms-transform: translate(110px, 0);
+  -o-transform: translate(110px, 0);
+  transform: translate(110px, 0);
+  background: rgba(255, 255, 255, 0.4);
+}
+.social ul li:hover a {
+  color: #000;
+}
+.social ul li:hover i {
+  color: #fff;
+  background: blue;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.social ul li i {
+  margin-left: 10px;
+  color: #000;
+  background: #fff;
+  padding: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  background: #ffffff;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* Main */
+#main{
+  min-height: 1000px;
+  background-color: rgb(109, 109, 109);
+  padding: 20px 0
+}
+
+#path{
+  padding: 10px 0
+}
+
+#left-section{
+
+}
+.left-item{
+  margin-bottom: 20px
+}
+#right-section{
+
+}
+/*Login*/
+#login1 {
+  background-color: black;
+}
+.rightLogin {margin-bottom: 40px;}
+.rightLogin .path {
+  float: left;
+  padding: 16px 9px;
+}
+.rightLogin .content {
+  margin-top: 10px;
+  border: 1px solid white;
+  padding: 20px 20px;
+  border-radius: 4px;
+}
+.rightLogin .content form {
+ margin-left: 200px;
+}
+.rightLogin .content form button {height: 50px; margin-top: 8px;margin-right: 400px;width: 395px;}
+.rightLogin .content .text { width: 189px;padding: 12px; }
+.rightLogin .content .socialIcon {width: 331px;}
+.rightLogin .content .socialIcon .fb {
+  background-color: blue;
+}
+.rightLogin .content .socialIcon .google{
+  background-color: red; margin-left: 30px;
+}
+.rightLogin .bottom {
+  margin-top: 20px;
+  border: 1px solid white;
+  padding: 20px 20px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 24px;
+}
+.rightLogin .bottom button {margin-top: 15px;}
+#login1 .sidebar {margin-top: 63px;border-left: 1px solid white;
+  padding: 20px 20px;height: 390px;text-align: left;}
+  #login1 .sidebar ul li {padding-top: 15px; border-bottom: 1px solid white;}
+  #login1 .sidebar ul li:hover {background-color: blue;}
+  #login1 .sidebar h5 {margin-left: 40px;}
+  /* Slider */
+  #slider{
+    background-color: rgb(236, 168, 78);
+    height: 400px;;
+  }
+
+  /* Footer */
+  #footer{
+    min-height: 50px;
+    background-color: rgb(44, 44, 44);
+    padding-top: 10px
+  }
+
+  .f-item-label{
+    font-size: 15pt;
+    padding:5px 0;
+    border-bottom: 1px solid rgb(165, 165, 165)
+  }
+  .f-item-content{
+    font-size: 11pt;
+    padding:5px 0;
+  }
+
+  /* Max width = 768px */
+  @media screen and (max-width:768px){
+    #logo{
+      text-align: center
+    }
+    #search-box{
+      padding-top: 10px;
+      padding-bottom: 10px
+    }
+    #login{
+      text-align: center
+    }
+    #hcontact{
+      padding-top: 5px
+    }
+    #left-section{
+      display: none
+    }
+    .rightLogin .content form{margin-left: 0px;}
+    .rightLogin .content .form1 label{width: 183px;}
+    .rightLogin .content .form1 input {width: 273px!important;}
+    .rightLogin .content .form2 label{width: 79px;}
+    .rightLogin .content .form2 input{width: 273px!important;}
+    .rightLogin .content .form2 div{width: 121px;}
+    .rightLogin .content form button {width: 275px;}
+
+  }
+  
+  @media screen and (max-width:375px) {
+    .rightLogin .content form{margin-left: 0px;}
+    .rightLogin .content .form1 label{width: 183px;}
+    .rightLogin .content .form1 input {width: 273px!important;}
+    .rightLogin .content .form2 label{width: 79px;}
+    .rightLogin .content .form2 input{width: 273px!important;}
+    .rightLogin .content .form2 div{width: 121px;}
+    .rightLogin .content form button {width: 275px;}
+    .rightLogin .content .socialIcon {width: 298px;}
+    .rightLogin .content .socialIcon .google{
+      background-color: red; margin-left: 2px;margin-top: 15px;
+    }
+  }

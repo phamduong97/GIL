@@ -1,0 +1,105 @@
+/*Login*/
+#login1 {
+    background-color: black;
+  }
+  .rightLogin {margin-bottom: 40px;}
+  .rightLogin .path {
+    float: left;
+    padding: 16px 9px;
+  }
+  .rightLogin .content {
+    margin-top: 10px;
+    border: 1px solid white;
+    padding: 20px 20px;
+    border-radius: 4px;
+  }
+  .rightLogin .content form {
+   margin-left: 200px;
+  }
+  .rightLogin .content form button {height: 50px; margin-top: 8px;margin-right: 400px;width: 395px;}
+  .rightLogin .content .text { width: 189px;padding: 12px 0px; }
+  .rightLogin .content .socialIcon {width: 331px;}
+  .rightLogin .content .socialIcon .fb {
+    background-color: #0c56c5;
+  }
+  .rightLogin .content .socialIcon .google{
+    background-color: #ff1f1f; margin-left: 30px;
+  }
+  .rightLogin .bottom {
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 20px 20px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 24px;
+  }
+  .rightLogin .bottom button {margin-top: 15px;}
+  #login1 .sidebar {margin-top: 63px;border-left: 1px solid white;
+    padding: 20px 20px;height: 390px;text-align: left;}
+    #login1 .sidebar ul li {padding-top: 15px; border-bottom: 1px solid white;}
+    #login1 .sidebar ul li:hover {background-color: blue;}
+    #login1 .sidebar h5 {margin-left: 40px;}
+    /* Slider */
+    #slider{
+      background-color: rgb(236, 168, 78);
+      height: 400px;;
+    }
+  
+    /* Footer */
+    #footer{
+      min-height: 50px;
+      background-color: rgb(44, 44, 44);
+      padding-top: 10px
+    }
+  
+    .f-item-label{
+      font-size: 15pt;
+      padding:5px 0;
+      border-bottom: 1px solid rgb(165, 165, 165)
+    }
+    .f-item-content{
+      font-size: 11pt;
+      padding:5px 0;
+    }
+  
+    /* Max width = 768px */
+    @media screen and (max-width:768px){
+      #logo{
+        text-align: center
+      }
+      #search-box{
+        padding-top: 10px;
+        padding-bottom: 10px
+      }
+      #login{
+        text-align: center
+      }
+      #hcontact{
+        padding-top: 5px
+      }
+      #left-section{
+        display: none
+      }
+      .rightLogin .content form{margin-left: 0px;}
+      .rightLogin .content .form1 label{width: 183px;}
+      .rightLogin .content .form1 input {width: 273px!important;}
+      .rightLogin .content .form2 label{width: 79px;}
+      .rightLogin .content .form2 input{width: 273px!important;}
+      .rightLogin .content .form2 div{width: 121px;}
+      .rightLogin .content form button {width: 275px;}
+  
+    }
+    
+    @media screen and (max-width:375px) {
+      .rightLogin .content form{margin-left: 0px;}
+      .rightLogin .content .form1 label{width: 183px;}
+      .rightLogin .content .form1 input {width: 273px!important;}
+      .rightLogin .content .form2 label{width: 79px;}
+      .rightLogin .content .form2 input{width: 273px!important;}
+      .rightLogin .content .form2 div{width: 121px;}
+      .rightLogin .content form button {width: 275px;}
+      .rightLogin .content .socialIcon {width: 298px;}
+      .rightLogin .content .socialIcon .google{
+        background-color: red; margin-left: 2px;margin-top: 15px;
+      }
+    }
