@@ -1,0 +1,26 @@
+@media screen and (max-width:768px){
+    #logo{
+      text-align: center
+    }
+    #search-box{
+      padding-top: 10px;
+      padding-bottom: 10px
+    }
+    #login{
+      text-align: center
+    }
+    #hcontact{
+      padding-top: 5px
+    }
+    #left-section{
+      display: none
+    }
+    .rightLogin .content form{margin-left: 0px;}
+    .rightLogin .content .form1 label{width: 183px;}
+    .rightLogin .content .form1 input {width: 273px!important;}
+    .rightLogin .content .form2 label{width: 79px;}
+    .rightLogin .content .form2 input{width: 273px!important;}
+    .rightLogin .content .form2 div{width: 121px;}
+    .rightLogin .content form button {width: 275px;}
+
+  }

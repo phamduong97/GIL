@@ -1,0 +1,13 @@
+@media screen and (max-width:375px) {
+    .rightLogin .content form{margin-left: 0px;}
+    .rightLogin .content .form1 label{width: 183px;}
+    .rightLogin .content .form1 input {width: 273px!important;}
+    .rightLogin .content .form2 label{width: 79px;}
+    .rightLogin .content .form2 input{width: 273px!important;}
+    .rightLogin .content .form2 div{width: 121px;}
+    .rightLogin .content form button {width: 275px;}
+    .rightLogin .content .socialIcon {width: 298px;}
+    .rightLogin .content .socialIcon .google{
+      background-color: red; margin-left: 2px;margin-top: 15px;
+    }
+  }

@@ -10,6 +10,5 @@ if(isset($_GET['controller'])){
     $controller = "home";
     $action = "index";
 }
-
 include "route.php";
 ?>
