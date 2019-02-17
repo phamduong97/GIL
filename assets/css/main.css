@@ -153,6 +153,21 @@ a {
 
 }
 
+#p-search-bar{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #6d6d6d;
+}
+
+#p-sort-bar{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #6d6d6d;
+}
+#p-search-list{
+  padding-top: 10px;
+}
+
 
   
 

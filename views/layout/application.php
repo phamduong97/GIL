@@ -19,7 +19,7 @@
     <div id="main">
         <div class="container-fluid">
             <div class="container">
-                <div id="path"><a href="home.html"><i class="fa fa-home"></i></a>/</div>
+                <div id="path"><a href="home.html"><i class="fa fa-home"></i></a> / <a href="<?=$path?>">Tìm kiếm</a></div>
                 <?=$content?>
             </div>
         </div>

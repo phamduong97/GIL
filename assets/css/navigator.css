@@ -5,7 +5,7 @@
     z-index: 1000;
   }
   #navigator a:hover{
-    color: rgb(163, 163, 163)
+    
   }
   .nav-item{
     margin: 10px 0px;
@@ -21,6 +21,9 @@
   .nav-item:hover{
     background-color: rgb(24, 24, 24);
     border-radius: 5px;
+  }
+  .nav-item:hover a{
+    color: rgb(163, 163, 163)
   }
   
   #mycart{
