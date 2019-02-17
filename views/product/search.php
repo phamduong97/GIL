@@ -63,15 +63,17 @@
 
 <div id="p-search-list" class="">
     <!-- <h5>Danh sách sản phẩm phù hợp</h5> -->
-    <div class="row">
+
+    <!-- Danh sách lưới -->
+    <div class="row" id="net-list">
         <div class="col-md-3">
             <div class="product">
                 <div class="thumbnail">
                     <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    <div class="fastbuybtn">MUA NGAY</div>
+                    <a class="addcartbtn">THÊM VÀO GIỎ</a>
+                    <a class="fastbuybtn">MUA NGAY</a>
                 </div>
-                <div class="label">PUBG Steam Key</div>
+                <div class="label"><a href="">PUBG Steam Key</a></div>
                 <div class="price">100.000 VNĐ</div>
                 <div class="saleprice">100.000 VNĐ</div>
             </div>
@@ -80,21 +82,10 @@
             <div class="product">
                 <div class="thumbnail">
                     <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
+                    <a class="addcartbtn">THÊM VÀO GIỎ</a>
+                    <a class="fastbuybtn">MUA NGAY</a>
                 </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/pic2.jpg" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
+                <div class="label"><a href="">PUBG Steam Key</a></div>
                 <div class="price">100.000 VNĐ</div>
                 <div class="saleprice">100.000 VNĐ</div>
             </div>
@@ -103,10 +94,10 @@
             <div class="product">
                 <div class="thumbnail">
                     <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
+                    <a class="addcartbtn">THÊM VÀO GIỎ</a>
+                    <a class="fastbuybtn">MUA NGAY</a>
                 </div>
-                <div class="label">PUBG Steam Key</div>
+                <div class="label"><a href="">PUBG Steam Key</a></div>
                 <div class="price">100.000 VNĐ</div>
                 <div class="saleprice">100.000 VNĐ</div>
             </div>
@@ -115,72 +106,70 @@
             <div class="product">
                 <div class="thumbnail">
                     <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
+                    <a class="addcartbtn">THÊM VÀO GIỎ</a>
+                    <a class="fastbuybtn">MUA NGAY</a>
                 </div>
-                <div class="label">PUBG Steam Key</div>
+                <div class="label"><a href="">PUBG Steam Key</a></div>
                 <div class="price">100.000 VNĐ</div>
                 <div class="saleprice">100.000 VNĐ</div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
+    </div>
+
+    <!-- Danh sách hàng -->
+    <div id="row-list">
+        <div class="product row">
+            <div class="thumbnail col-md-4">
+                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
+            </div>
+            <div class="info col-md-8">
+                <div class="label"><a href="#">PUBG Steam Key</a></div>
+                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
+                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
+                <input type="button" value="Mua ngay" class="btn btn-danger">
+                <input type="button" value="Thêm vào giỏ" class="btn btn-warning">
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
+    </div>
+    <div id="row-list">
+        <div class="product row">
+            <div class="thumbnail col-md-4">
+                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
+            </div>
+            <div class="info col-md-8">
+                <div class="label"><a href="#">PUBG Steam Key</a></div>
+                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
+                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
+                <input type="button" value="Mua ngay" class="btn btn-danger">
+                <input type="button" value="Thêm vào giỏ" class="btn btn-warning">
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
+    </div>
+    <div id="row-list">
+        <div class="product row">
+            <div class="thumbnail col-md-4">
+                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
+            </div>
+            <div class="info col-md-8">
+                <div class="label"><a href="#">PUBG Steam Key</a></div>
+                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
+                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
+                <input type="button" value="Mua ngay" class="btn btn-danger">
+                <input type="button" value="Thêm vào giỏ" class="btn btn-warning">
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
+    </div>
+    <div id="row-list">
+        <div class="product row">
+            <div class="thumbnail col-md-4">
+                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="product">
-                <div class="thumbnail">
-                    <img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="">
-                    <div class="addcartbtn">THÊM VÀO GIỎ</div>
-                    
-                </div>
-                <div class="label">PUBG Steam Key</div>
-                <div class="price">100.000 VNĐ</div>
-                <div class="saleprice">100.000 VNĐ</div>
+            <div class="info col-md-8">
+                <div class="label"><a href="#">PUBG Steam Key</a></div>
+                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
+                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
+                <input type="button" value="Mua ngay" class="btn btn-danger">
+                <input type="button" value="Thêm vào giỏ" class="btn btn-warning">
             </div>
         </div>
     </div>

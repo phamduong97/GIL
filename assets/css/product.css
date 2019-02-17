@@ -1,4 +1,6 @@
-.product{
+
+
+#net-list .product{
     margin: 10px 0;
     text-align: center;
     position: relative;
@@ -6,47 +8,112 @@
     background: #444444
 }
 
-.product:hover{
+#net-list a{
+    cursor: pointer;
+}
+
+#net-list .addcartbtn{
+    color: white
+}
+
+#net-list .fastbuybtn{
+    color: white
+}
+
+#net-list .product:hover{
     box-shadow: 0 0 0 1px #3fd3ff
 }
 
-.product:hover .addcartbtn{
+#net-list .product:hover .addcartbtn{
     left: 0;
 }
-.product:hover .thumbnail img{
+#net-list .product:hover .fastbuybtn{
+    right: 0;
+}
+#net-list .product:hover .thumbnail img{
     opacity: 0.8;
 }
-.thumbnail{
+#net-list .thumbnail{
     position: relative;
     overflow: hidden;
 }
 
-.thumbnail img{
+#net-list .thumbnail img{
     width: 100%;
 }
 
-.label{
+#net-list .label{
     padding: 5px 0;
     font-weight: 700;
 
 }
-.price, .saleprice{
+#net-list .price, .saleprice{
     font-size: 14px
 }
-.price{
+#net-list .price{
     color: rgb(253, 66, 66);
     text-decoration-line: line-through
 }
 
-.saleprice{
+#net-list .saleprice{
     color: greenyellow
 }
 
-.addcartbtn{
+#net-list .addcartbtn{
     width: 100%;
     position: absolute;
     bottom: 0;
     left: -101%;
     background-color: #ff8926;
     transition: ease 600ms
+}
+
+#net-list .fastbuybtn{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: -101%;
+    background-color: #ff2626;
+    transition: ease 600ms
+}
+
+#row-list .product{
+    margin: 10px 0;
+    background: #444444
+}
+
+#row-list .thumbnail{
+    padding: 15px
+}
+
+#row-list .thumbnail img{
+    width: 100%;
+}
+
+#row-list .info{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#row-list .label{
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px
+}
+
+#row-list .description{
+    font-weight: 100;
+    margin-bottom: 10px
+}
+
+#row-list .price{
+    margin-bottom: 15px
+}
+
+#row-list .price .p1{
+    color: rgb(255, 55, 55)
+}
+
+#row-list .price .p2{
+    color: rgb(111, 255, 111)
 }
