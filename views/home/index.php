@@ -1,3 +1,4 @@
+<?php include "views/layout/leftsection.php"?>
 <div class="col-md-9" id="right-section">
                         
 <!-- Slider -->
