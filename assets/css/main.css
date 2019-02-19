@@ -128,7 +128,7 @@ a {
 
 /* Main */
 #main{
-  min-height: 1000px;
+  min-height: 500px;
   background-color: rgb(109, 109, 109);
   padding: 20px 0
 }

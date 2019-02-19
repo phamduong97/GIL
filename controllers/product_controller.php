@@ -10,7 +10,8 @@ class ProductController extends BaseController{
         if(isset($_GET['tag'])){
             $data = array(
                 "tag"=>$_GET['tag'],
-                "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}"
+                "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
+                "pathtext"=>"Tìm kiếm"
             );
             $this->render("search",$data);
         }

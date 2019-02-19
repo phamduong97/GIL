@@ -37,7 +37,7 @@
         </div>
         <div class="group-feature">
             <div class="feature-item-box container-fluid">
-                <div class="row">
+                <div class="row" id="net-list">
                     <div class="col-md-4">
                         <div class="product">
                             <div class="thumbnail">

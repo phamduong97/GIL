@@ -6,7 +6,11 @@ class HomeController extends BaseController{
         $this->folder = "home";
     }
     public function index(){
-        $this->render('index',array());
+        $data = array(
+            "pathtext"=>"Trang chủ",
+            "path"=>""
+        );
+        $this->render('index',$data);
     }
 }
 ?>

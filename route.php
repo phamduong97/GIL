@@ -2,7 +2,8 @@
 $controlList = array(
     'home'=>['index'],
     'account'=>['login'],
-    'product'=>['search']
+    'product'=>['search'],
+    'checkout'=>['cart']
 );
 
 if(!array_key_exists($controller,$controlList) || !in_array($action,$controlList[$controller])){
