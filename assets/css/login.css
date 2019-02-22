@@ -39,8 +39,3 @@
   #login1 .sidebar ul li {padding-top: 15px; border-bottom: 1px solid white;}
   #login1 .sidebar ul li:hover {background-color: blue;}
   #login1 .sidebar h5 {margin-left: 40px;}
-  /* Slider */
-  #slider{
-    background-color: rgb(236, 168, 78);
-    height: 400px;;
-  }

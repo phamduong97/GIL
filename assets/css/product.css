@@ -117,3 +117,84 @@
 #row-list .price .p2{
     color: rgb(111, 255, 111)
 }
+
+
+#p-image{
+    padding: 15px;
+    background-color: #151515;
+    border-radius: 15px;
+}
+#p-image .active{
+
+}
+.pfw-image{
+
+border-radius: 10px 10px 0px 0px;
+
+overflow: hidden;
+}
+.pfw-image img{
+    width: 100%;
+}
+
+
+#thumbnail-box{
+    overflow-x: scroll;
+}
+#thumbnail-box::-webkit-scrollbar{
+    height: 20px;
+}
+#thumbnail-box::-webkit-scrollbar-track{
+    background-color: #3b3b3b;
+    border-radius: 0px 0px 8px 8px;
+}
+#thumbnail-box::-webkit-scrollbar-thumb{
+    background-color: #0b0b0b;
+    border-radius: 0px 0px 8px 8px;
+}
+#list-image{
+    width: max-content;
+    height: 120px;
+}
+.thumbnail{
+    display: inline;
+}
+.thumnail.active{
+
+}
+.thumbnail img{
+    height: 120px;
+}
+
+#p-info{
+    padding: 10px;
+    border: 2px solid #818181;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #151515;
+}
+
+.p-content{
+    /* border-right: 2px solid #9e9e9e; */
+}
+
+.p-content .item{
+    margin-bottom: 5px;
+    /* border-bottom: 1px solid; */
+}
+.p-content .item span{
+    float: right
+}
+
+#main-info{
+    margin-bottom: 40px
+}
+
+.button-group{
+
+}
+.button-group a{
+    margin-bottom: 10px
+}
+
+

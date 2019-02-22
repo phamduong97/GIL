@@ -2,7 +2,7 @@
 $controlList = array(
     'home'=>['index'],
     'account'=>['login'],
-    'product'=>['search'],
+    'product'=>['search','view'],
     'checkout'=>['cart']
 );
 

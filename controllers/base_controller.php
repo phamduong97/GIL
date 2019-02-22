@@ -1,7 +1,6 @@
 <?php
 class BaseController{
     protected $folder;
-
     public function render($file,$data){
         $view_file = "views/".$this->folder."/".$file.".php";
         if(is_file($view_file)){

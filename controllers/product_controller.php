@@ -16,5 +16,19 @@ class ProductController extends BaseController{
             $this->render("search",$data);
         }
     }
+    public function view(){
+        if(!isset($_GET["id"])){
+            header("location: index.php?controller=home&action=index");
+        }else{
+            $data = array(
+                'path'=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}&id={$_GET['id']}",
+                "pathtext"=>"TOUHOU GENSO WANDERER",
+                'id'=>$_GET['id']
+            );
+
+            
+            $this->render("view",$data);
+        }
+    }
 }
 ?>

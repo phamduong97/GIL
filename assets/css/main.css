@@ -136,7 +136,8 @@ a {
 #main .container{
   background-color: #242424;
   border-radius: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  /* margin-bottom: 15px */
 }
 
 #path{
