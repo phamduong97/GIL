@@ -14,5 +14,12 @@ class CheckoutController extends BaseController{
 
         $this->render("mycart",$data);
     }
+    public function checkout(){
+        $data= array(
+            "path"=>"",
+            "pathtext"=>"Đơn hàng"
+        );
+        $this->render("checkout",$data);
+    }
 }
 ?>
