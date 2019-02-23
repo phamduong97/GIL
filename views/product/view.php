@@ -6,7 +6,7 @@
     <div class="col-md-9">
         <h4 class="text-center" style="">TOUHOU GENSO WANDERER</h4>
         <div id="p-image">
-            <div class="pfw-image active">
+            <div class="pfw-image">
                 <img src="assets/image/wallpaper0.jpg" alt="">
             </div>
             <div id="thumbnail-box">
@@ -28,6 +28,12 @@
                     </div>
                 </div>
             </div>
+            <script>
+                $('.thumbnail').click(function(){
+                    let url = $(this).children().attr("src");
+                    $('.pfw-image').children().attr("src",url);
+                })
+            </script>
         </div>
         <div id="p-info">
             <div class="row">
@@ -74,6 +80,66 @@
                         <a href="<?=rootPath."?controller=checkout&action=cart"?>" class="btn btn-primary w-100 text-left"><span class="fas fa-chevron-circle-right w-25"></span></span class="w-75">Mua ngay</span></a>
                         <a href="#" class="btn btn-primary w-100 text-left"><span class="fas fa-chevron-circle-right w-25"></span></span class="w-75">Thêm vào giỏ</span></a>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="p-comment">
+            <div class="editor">
+                <textarea name="comment-box" id="" cols="" rows="2" class="form-control"></textarea>
+                <!-- <script>CKEDITOR.replace("comment-box")</script> -->
+                <input type="button" value="Đăng" class="btn btn-success submit" name="commentBtn">
+            </div>
+            <div class="comment-box">
+                <div class="comment">
+                    <div class="c-avatar">
+                        <img src="assets/image/sticker(100).png" alt="">
+                    </div>
+                    <div style="width:80%;display:inline-block">    
+                        <div class="c-name">Menhera</div>
+                        <div class="c-text">Đúng là tuyệt phẩm!</div>
+                        <div class="c-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="comment">
+                    <div class="c-avatar">
+                        <img src="assets/image/sticker(100).png" alt="">
+                    </div>
+                    <div style="width:80%;display:inline-block">    
+                        <div class="c-name">Menhera</div>
+                        <div class="c-text">Tao rút lại lời nói <(") Game như loz</div>
+                        <div class="c-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="comment">
+                    <div class="c-avatar">
+                        <img src="assets/image/sticker(100).png" alt="">
+                    </div>
+                    <div style="width:80%;display:inline-block">    
+                        <div class="c-name">Menhera</div>
+                        <div class="c-text">Xin lỗi chủ tịch :3</div>
+                        <div class="c-rate">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
