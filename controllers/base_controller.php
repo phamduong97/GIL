@@ -18,7 +18,7 @@ class BaseController{
             ob_start();
             include $view_file;
             $content = ob_get_clean();
-            include "views/layout/admin.php";
+            include "views/admin/layout/application.php";
         }
 
     }

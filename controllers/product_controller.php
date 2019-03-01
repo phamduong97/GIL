@@ -1,6 +1,6 @@
 <?php
 include "controllers/base_controller.php";
-include "connection.php";
+include_once "models/Product.php";
 class ProductController extends BaseController{
     public function __construct()
     {
@@ -17,18 +17,19 @@ class ProductController extends BaseController{
         }
     }
     public function view(){
-        if(!isset($_GET["id"])){
+        if(!isset($_GET["code"])){
             header("location: index.php?controller=home&action=index");
         }else{
             $data = array(
-                'path'=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}&id={$_GET['id']}",
-                "pathtext"=>"TOUHOU GENSO WANDERER",
-                'id'=>$_GET['id']
+                "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}&code={$_GET['code']}",
+                "pathtext"=>"Undefined",
+                "data"=>array()
             );
-
-            
+            $data['data']=Product::getData($_GET['code']);
+            $data['pathtext']=$data['data']['name'];
             $this->render("view",$data);
         }
     }
+    
 }
 ?>

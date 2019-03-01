@@ -1,31 +1,28 @@
 <div class="row">
     <?php
     include "views/layout/leftsection.php";
+    $image_arr = explode(";",$data['image']);
+    $imageroot = "assets/image/product/";
+    // print_r($data);
     ?>
 
     <div class="col-md-9">
-        <h4 class="text-center" style="">TOUHOU GENSO WANDERER</h4>
+        <h4 class="text-center" style=""><?=$data['name']?></h4>
         <div id="p-image">
             <div class="pfw-image">
-                <img src="assets/image/wallpaper0.jpg" alt="">
+                <img src="<?=$imageroot.$image_arr[0]?>" alt="">
             </div>
             <div id="thumbnail-box">
                 <div id="list-image">
-                    <div class="thumbnail">
-                        <img src="assets/image/wallpaper0.jpg" alt="">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/image/wallpaper1.jpg" alt="">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/image/wallpaper2.jpg" alt="">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/image/wallpaper3.jpg" alt="">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/image/wallpaper4.jpg" alt="">
-                    </div>
+                    <?php
+                    foreach ($image_arr as $key => $value) {
+                        # code...?>
+                        <div class="thumbnail">
+                            <img src="<?=$imageroot.$value?>" alt="">
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
             <script>
@@ -39,37 +36,52 @@
             <div class="row">
                 <div class="col-lg-12" id="main-info">
                     <h4 class="text-center">Thông tin</h4>
-                    <div>
-                        January 1975, you have created your video game company. You are renting a tight place that allows you to develop your first game. Quickly, your games are successful and you already have to move, but it is up to you to cross the city to pick up your next local. In the blink of an eye you are hiring artists to improve the visual aspect of your games. Next came developers and then testers.<br>But a problem remains, even if your games are brilliants, you don't have enough fans to self-publish a big game to make your studio profitable. You will have to turn to video game editors who will carve out the lion's share. Chaining successes is the only way of getting rid of the publishers. Furthermore you will be able to publish your own publishing contracts. Then you will then be ready to dominate the market and buy back your competitors.<br>Each game is unique
-                        Maps and studios are procedurally generated. Combined with random events and customizable studios, you will rediscover the game with each new game.
-                        <br>Assign the best studio
-                        <br>Browse the cities and choose the location of your next studio. As my uncle used to say "Honey catches more talents than vinegar !"
-                        Furnish your studios carefully
-                        <br>Everyone is not a studio designer, yet every piece of furniture has its place in your studio, and can have an influence on the history of your company.
-                        <br>Publish, hire, repeat
-                        <br>Each game is unique, but over time new generations of consoles come out. You cannot create a bestseller alone. You have to hire new talents that will help you creating the perfect game
-                        <br>Game development
-                        <br>The development of the game is broadcast on twitch using the channel binogure.
-                    </div>
+                    <div><?=$data['description']?></div>
                 </div>
                 <div class="col-lg-9 p-content">
-                    <table class="table" style="margin:0">
+                    <table class="table table-bordered" style="margin:0">
                         <tbody>
                             <tr>
                                 <th>Mã sản phẩm</th>
-                                <td>swc100</td>
+                                <td><?=$data['code']?></td>
+                                <th>Tình trạng</th>
+                                <td><?=$data['status']?></td>
                             </tr>
                             <tr>
-                                <th>Tình trạng</th>
-                                <td>Còn hàng</td>
+                                <th>Nhà sản xuất</th>
+                                <td><?=$data['proname']?></td>
+                                <th>Giá sản phẩm</th>
+                                <td>
+                                    <?php
+                                    if($data['sale']==0){
+                                        echo $data['price'];
+                                    }else{
+                                        $price = $data['price']-$data['price']*$data['sale']/100;
+                                        echo "on sale: ".$price;
+                                    }
+                                    ?>
+                                </td>
                             </tr>
+
                             <tr>
                                 <th>Cấu hình tối thiểu</th>
-                                <td>Đây là cấu hình tối thiểu</td>
+                                <td colspan=3>
+                                <?php
+                                $minConfig = explode(";",$data['config']);
+                                echo "OS: ".$minConfig[0]."<br>";
+                                echo "Processor: ".$minConfig[1]."<br>";
+                                echo "RAM: ".$minConfig[2]."<br>";
+                                echo "Graphic Card: ".$minConfig[3]."<br>";
+                                echo "DirectX: ".$minConfig[4]."<br>";
+                                echo "Network: ".$minConfig[5]."<br>";
+                                echo "Storage: ".$minConfig[6]."<br>";
+                                echo "Sound Card: ".$minConfig[7]."<br>";
+                                ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Cấu hình đề nghị</th>
-                                <td>Đây là cấu hình Đề nghị</td>
+                                <td colspan=3>Đây là cấu hình Đề nghị</td>
                             </tr>
                         </tbody>
                     </table>                   
