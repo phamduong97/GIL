@@ -38,10 +38,11 @@
                                     foreach ($data as $key => $value) {
                                         ?>
                                         <tr>
-                                            <td><a href="<?=rootPath."?controller=product&action=view&id=".$value['id']?>"><?=$value['name']?></a></td>
+                                            <td><a href="<?=rootPath."?controller=product&action=view&code=".$value['code']?>"><?=$value['name']?></a></td>
                                             <td><?=$value['code']?></td>
                                             <td><?=$value['price']?></td>
                                             <td>0</td>
+                                            <td></td>
                                         </tr>
                                         <?php
                                     }

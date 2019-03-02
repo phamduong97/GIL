@@ -1,6 +1,8 @@
 <?php
 include_once "controllers/base_controller.php";
 include_once "models/Product.php";
+include_once "models/Category.php";
+include_once "models/Producer.php";
 class AdminProductController extends BaseController{
     public function __construct()
     {
@@ -16,7 +18,9 @@ class AdminProductController extends BaseController{
             $data = $_POST;
             Product::create($data);
         }
-        $this->renderAdmin("create",array());
+        $data['category']=Category::getAllCategory();
+        $data['producer']=Producer::getAllProducer();
+        $this->renderAdmin("create",$data);
     }
 }
 ?>

@@ -10,11 +10,12 @@
                         <td class="w-25">
                             <label for="">Thể loại</label>
                             <select name="category" id="" class="form-control">
-                                <option value="1">Hành động</option>
-                                <option value="2">Nhập vai</option>
-                                <option value="3">Phưu lưu</option>
-                                <option value="4">Thể thao</option>
-                                <option value="5">Kinh dị</option>
+                                <?php
+                                foreach ($category as $key => $value) {
+                                    echo "<option value='".$key."'>".$value."</option>";
+                                }
+                                ?>
+                                
                             </select>
                         </td>
                     </tr>
@@ -27,9 +28,11 @@
                         <td>
                             <label for="">Hãng sản xuất</label>
                             <select name="producer" id="" class="form-control">
-                                <option value="1">Steam</option>
-                                <option value="2">gameloft</option>
-                                <option value="3">Bandai Namco</option>
+                                <?php
+                                foreach ($producer as $key => $value) {
+                                    echo "<option value='".$key."'>".$value."</option>";
+                                }
+                                ?>
                             </select>
                         </td>
                         <td>

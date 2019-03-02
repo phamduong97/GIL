@@ -13,17 +13,18 @@ class Product{
         return $data;
     }
     public static function create($data){
-        echo "<pre>";
+        // echo "<pre>";
         extract($data);
         // print_r($data);
         // print_r($_FILES);
         
         $sql = "INSERT INTO product(name,code,price,description,config,sale,release_date,image,category_id,producer_id) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        
         $stmt = DB::getInstance()->prepare($sql);
         $config_tmp =  implode(';',$config);
 
-        echo "<pre>";
-        print_r($_FILES);
+        // echo "<pre>";
+        // print_r($_FILES);
         $image = $_FILES['image'];
         $image_tmp = array();
 
@@ -46,7 +47,15 @@ class Product{
         $stmt->bindParam(9,$category,PDO::PARAM_INT);
         $stmt->bindParam(10,$producer,PDO::PARAM_INT);
         if($stmt->execute()){
-            echo '<div class="alert alert-success">Thêm thành công</div>';
+            $lastid = DB::getInstance()->lastInsertId();
+            $sql2 = "INSERT INTO category_product VALUES({$category},{$lastid})";
+            // echo $sql2;
+            $stmt2 = DB::getInstance()->prepare($sql2);
+            if($stmt2->execute()){
+                echo '<div class="alert alert-success">Thêm thành công</div>';
+            }else{
+                echo '<div class="alert alert-danger">Thêm thất bại</div>';
+            }
         }else{
             echo '<div class="alert alert-danger">Thêm thất bại</div>';
         }
