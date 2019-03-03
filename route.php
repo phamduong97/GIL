@@ -2,8 +2,8 @@
 $controlList = array(
     'home'=>['index'],
     'account'=>['login'],
-    'product'=>['search','view'],
-    'checkout'=>['cart','checkout']
+    'product'=>['search','view','addcart'],
+    'checkout'=>['cart','checkout','destroycart']
 );
 $adminList = array(
     'product'=>['create','index']

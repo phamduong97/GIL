@@ -1,4 +1,7 @@
-
+#net-list+#row-list{
+    position: absolute;
+    top: 0;
+}
 
 #net-list .product{
     margin: 10px 0;

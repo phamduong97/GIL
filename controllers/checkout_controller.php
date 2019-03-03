@@ -6,20 +6,32 @@ class CheckoutController extends BaseController{
         $this->folder = "checkout";
     }
     public function cart(){
-        $data= array(
-            "path"=>"",
-            "pathtext"=>"Giỏ hàng"
-        );
+        if(!isset($_SESSION['cart'])){
+            header("location: ".rootPath);
+        }else{
+            $data= array(
+                "path"=>"",
+                "pathtext"=>"Giỏ hàng"
+            );
+            $data['product'] = $_SESSION['cart'];
+            $this->render("mycart",$data);
+        }
         
-
-        $this->render("mycart",$data);
     }
     public function checkout(){
         $data= array(
             "path"=>"",
-            "pathtext"=>"Đơn hàng"
+            "pathtext"=>"Đơn hàng",
+            "product"=>$_SESSION['cart']
         );
         $this->render("checkout",$data);
+    }
+    public function destroycart(){
+        print_r($_SESSION['cart']);
+        if(isset($_POST['btndestroy'])){
+            unset($_SESSION['cart']);
+            echo "Đã hủy rỏ hàng";
+        }
     }
 }
 ?>

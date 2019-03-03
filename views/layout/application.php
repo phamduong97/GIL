@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="assets/css/all.css">
     <script src="ckeditor/ckeditor.js"></script>
+    <script src="assets/js/buy.js"></script>
+    <script src="assets/js/search.js"></script>
 </head>
 <body>
     <?php include "views/layout/header.php"?>

@@ -8,7 +8,7 @@
                 <div class="col-lg-6" id="search-box">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button class="btn btn-default "><i class="fa fa-search"></i></button>
+                            <a href="?controller=product&action=search" class="btn btn-info"><i class="fa fa-search"></i></a>
                         </div>
                         <input type="text" name="" id="inputsearch" class="form-control">
                     </div>

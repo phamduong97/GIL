@@ -7,14 +7,15 @@ class ProductController extends BaseController{
         $this->folder = "product";
     }
     public function search(){
+        $data = array(
+            "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
+            "pathtext"=>"Tìm kiếm"
+        );
+        $data['product']=Product::getAll();
         if(isset($_GET['tag'])){
-            $data = array(
-                "tag"=>$_GET['tag'],
-                "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
-                "pathtext"=>"Tìm kiếm"
-            );
-            $this->render("search",$data);
+            $data['tag']=$_GET['tag'];
         }
+        $this->render("search",$data);
     }
     public function view(){
         if(!isset($_GET["code"])){
@@ -30,6 +31,32 @@ class ProductController extends BaseController{
             $this->render("view",$data);
         }
     }
-    
+    public function addcart(){
+        
+        if(isset($_POST['code'])){
+            if(isset($_POST['count'])){
+                $_SESSION['cart'][$_POST['code']]['quantity']=(int)$_POST['count'];
+            }else{
+                if(isset($_SESSION['cart'][$_POST['code']])){
+                    $_SESSION['cart'][$_POST['code']]['quantity']++;
+                }else{
+                    if(!isset($_SESSION['cart'])){
+                        $_SESSION['cart']=array();
+                    }
+                    $data = Product::getData($_POST['code']);
+                    $thumbnail = explode(";",$data['image'])[0];
+                    $_SESSION['cart'][$_POST['code']] = array(
+                        'name'=>$data['name'],
+                        'price'=>$data['price'],
+                        'thumbnail'=>$thumbnail,
+                        'quantity'=>1
+                    );
+                }
+            }
+            echo "Đã thêm vào rỏ";
+        }else{
+            echo "Không thể thêm vào giỏ";
+        }
+    }
 }
 ?>

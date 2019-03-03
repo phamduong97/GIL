@@ -6,7 +6,7 @@
 //     print_r($url_array);
 //     // $_REQUEST['controller'] = $url_array[0]
 // }
-
+session_start();
 define("rootPath","http://localhost/GIL/");
 if(isset($_GET['controller'])){
     $controller = $_GET['controller'];

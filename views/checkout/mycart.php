@@ -13,60 +13,29 @@
         </tr>
     </thead>
     <tbody>
+        <?php
+        
+        foreach ($product as $key => $value) {
+        ?>
         <tr>
-            <td><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="" style="width:100%"></td>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
+            <td><img src="assets/image/product/<?=$value['thumbnail']?>" alt="" style="width:200px"></td>
+            <td><?=$value['name']?></td>
+            <td><?=$key?></td>
             <td>
                 <div class="input-group">
-                    <input type="text" name="" id="" class="form-control" value="100">
+                    <input type="text" name="" id="" class="form-control" value="<?=$value['quantity']?>">
                     <div class="input-group-append">
-                        <button class="btn btn-success" title="Lưu"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="input-group-append" title="Hủy">
-                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+                        <button class="btn btn-success" title="Lưu" onclick="addcart('<?=$key?>',this)"><i class="far fa-edit"></i></button>
                     </div>
                 </div>
             </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
+            <td><?=$value['price']?> VND</td>
+            <td><?=$value['price']*$value['quantity']?> VND</td>
         </tr>
-        <tr>
-            <td><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="" style="width:100%"></td>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
-            <td>
-                <div class="input-group">
-                    <input type="text" name="" id="" class="form-control" value="100">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" title="Lưu"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="input-group-append" title="Hủy">
-                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-                    </div>
-                </div>
-            </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
-        </tr>
-        <tr>
-            <td><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt="" style="width:100%"></td>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
-            <td>
-                <div class="input-group">
-                    <input type="text" name="" id="" class="form-control" value="100">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" title="Lưu"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="input-group-append" title="Hủy">
-                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-                    </div>
-                </div>
-            </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
-        </tr>
+        <?php
+        }
+        ?>
+        
     </tbody>
 </table>
 
@@ -124,10 +93,13 @@
                 </tr>
             </table>
             <div class="row">
-                <div class="col-md-6" style="">
+                <div class="col-md-4" style="">
                     <button class="btn btn-primary w-100">Mua thêm</button>
                 </div>
-                <div class="col-md-6" style="">
+                <div class="col-md-4" style="">
+                    <button class="btn btn-danger w-100" onclick="destroyCart()">Hủy rỏ hàng</button>
+                </div>
+                <div class="col-md-4" style="">
                     <button class="btn btn-secondary w-100">Thanh toán</button>
                 </div>
             </div>

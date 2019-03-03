@@ -2,7 +2,7 @@
 include "connection.php";
 class Product{
     public static function getAll(){
-        $sql = "SELECT id,name,code,price FROM product LIMIT 20";
+        $sql = "SELECT * FROM product";
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->execute();
         $row = $stmt->rowCount();

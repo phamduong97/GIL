@@ -1,0 +1,14 @@
+$(document).ready(function(){
+    $('.displaybtn1').click(function(){
+        $('.displaybtn1').addClass('bg-dark').removeClass('bg-secondary')
+        $('.displaybtn2').removeClass('bg-dark').addClass('bg-secondary')
+        $('#row-list').show();
+        $('#net-list').hide();
+    })
+    $('.displaybtn2').click(function(){
+        $('.displaybtn2').addClass('bg-dark').removeClass('bg-secondary')
+        $('.displaybtn1').removeClass('bg-dark').addClass('bg-secondary')
+        $('#net-list').show();
+        $('#row-list').hide();
+    })
+})
