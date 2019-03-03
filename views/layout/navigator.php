@@ -39,7 +39,7 @@
                 <div class="col-lg-3" id="cartbox">
                     <div id="mycart">
                         <i class="fa fa-shopping-bag"></i>
-                        <a href="#"><span>0</span> Sản phẩm - <span>0</span> VNĐ</a>
+                        <a href="?controller=checkout&action=cart"><span>0</span> Sản phẩm - <span>0</span> VNĐ</a>
                         
                     </div>
                     <div style="position: relative;">

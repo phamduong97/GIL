@@ -7,6 +7,7 @@ class PageController extends BaseController{
     }
     public function error(){
         $data=array(
+            "title"=>"Lỗi",
             'path'=>'',
             'pathtext'=>'Lỗi'
         );

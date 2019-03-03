@@ -14,8 +14,9 @@
     </thead>
     <tbody>
         <?php
-        
+        $total_price = 0;
         foreach ($product as $key => $value) {
+            $total_price+= $value['price']*$value['quantity'];
         ?>
         <tr>
             <td><img src="assets/image/product/<?=$value['thumbnail']?>" alt="" style="width:200px"></td>
@@ -49,9 +50,9 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Mã giảm giá</div>
                     </div>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="vcode" value="<?php echo $voucher;?>">
                     <div class="input-group-append">
-                        <input type="button" value="Áp dụng" class="btn btn-success">
+                        <input type="button" value="Áp dụng" class="btn btn-success" onclick="addVoucher()">
                     </div>
                 </div>
             </div>
@@ -85,7 +86,7 @@
             <table class="table table-bordered">
                 <tr>
                     <td>Tổng giá đơn hàng</td>
-                    <td>$10,000</td>
+                    <td><?=$total_price?> VND</td>
                 </tr>
                 <tr>
                     <td>Cần nạp thêm</td>
@@ -94,7 +95,7 @@
             </table>
             <div class="row">
                 <div class="col-md-4" style="">
-                    <button class="btn btn-primary w-100">Mua thêm</button>
+                    <a href="<?=rootPath?>" class="btn btn-primary w-100">Mua thêm</a>
                 </div>
                 <div class="col-md-4" style="">
                     <button class="btn btn-danger w-100" onclick="destroyCart()">Hủy rỏ hàng</button>

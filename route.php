@@ -3,7 +3,7 @@ $controlList = array(
     'home'=>['index'],
     'account'=>['login'],
     'product'=>['search','view','addcart'],
-    'checkout'=>['cart','checkout','destroycart']
+    'checkout'=>['cart','checkout','destroycart','voucher']
 );
 $adminList = array(
     'product'=>['create','index']

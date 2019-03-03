@@ -7,6 +7,7 @@ class HomeController extends BaseController{
     }
     public function index(){
         $data = array(
+            "title"=>"Trang chủ Game Is Life",
             "pathtext"=>"Trang chủ",
             "path"=>""
         );

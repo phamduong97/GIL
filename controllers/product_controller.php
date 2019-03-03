@@ -8,6 +8,7 @@ class ProductController extends BaseController{
     }
     public function search(){
         $data = array(
+            "title"=>"Tìm kiếm",
             "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
             "pathtext"=>"Tìm kiếm"
         );
@@ -22,17 +23,18 @@ class ProductController extends BaseController{
             header("location: index.php?controller=home&action=index");
         }else{
             $data = array(
+                "title"=>"Thông tin sản phẩm",
                 "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}&code={$_GET['code']}",
                 "pathtext"=>"Undefined",
                 "data"=>array()
             );
             $data['data']=Product::getData($_GET['code']);
+            $data['title']=$data['data']['name'];
             $data['pathtext']=$data['data']['name'];
             $this->render("view",$data);
         }
     }
     public function addcart(){
-        
         if(isset($_POST['code'])){
             if(isset($_POST['count'])){
                 $_SESSION['cart'][$_POST['code']]['quantity']=(int)$_POST['count'];

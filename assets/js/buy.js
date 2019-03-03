@@ -16,13 +16,13 @@ function addcart(code,obj){
         $.ajax({
             url:"http://localhost/gil/?controller=product&action=addcart",
             type:"post",
-            dataType:"json",
+            dataType:"text",
             data:{
                 "code": code,
                 "count": $(obj).parent().parent().children()[0].value
             },
             success: function(data,statusCode){
-                alert("Đã thêm vào rỏ hàng");
+                window.location.href="http://localhost/gil/?controller=checkout&action=cart";
             }
         })
     }
@@ -38,7 +38,30 @@ function destroyCart(){
         },
         success: function(data,statcode){
             alert(data);
-            window.location.href="?controller=product&action=search&tag=action"
+            window.location.href="?controller=product&action=search"
+        }
+    })
+}
+
+function addVoucher(){
+    var vcode = $('input[name=vcode]').val();
+    $.ajax({
+        url:"http://localhost/gil/?controller=checkout&action=voucher",
+        type:"post",
+        dataType:"text",
+        data:{
+            "vcode": vcode,
+            "setvcode": true
+        },
+        success: function(data,statcode){
+            if(data==0){
+                alert("Không thể áp dụng voucher code");
+            }
+            if(data==1){
+                alert("Đã áp dụng voucher")
+            }
+            // console.log(data);
+            
         }
     })
 }
