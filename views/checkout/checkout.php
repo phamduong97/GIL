@@ -7,38 +7,28 @@
             <td>Tên sản phẩm</td>
             <td>Mã sản phẩm</td>
             <td>Số lượng</td>
-            <td>Đơn giá</td>
+            <td>Giá sản phẩm</td>
             <td>Tổng cộng</td>
         </tr>
     </thead>
     <tbody>
+        <?php
+        // echo "<pre>";
+        // print_r($product);
+        $total_price = 0;
+        foreach ($product as $key => $value) {
+            $total_price+= $value['price']*$value['quantity'];
+        ?>
         <tr>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
-            <td>
-                100
-            </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
+            <td><?=$value['name']?></td>
+            <td><?=$key?></td>
+            <td><?=$value['quantity']?></td>
+            <td><?=$value['price']?> VND</td>
+            <td><?=$value['price']*$value['quantity']?> VND</td>
         </tr>
-        <tr>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
-            <td>
-                100
-            </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
-        </tr>
-        <tr>
-            <td>Steam wallet card 100$</td>
-            <td>swc100</td>
-            <td>
-                100
-            </td>
-            <td>100 $</td>
-            <td>100.000 $</td>
-        </tr>
+        <?php
+        }
+        ?>
     </tbody>
 </table>
 
@@ -52,7 +42,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Mã giảm giá</div>
                     </div>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" value="<?=$voucher?>">
                     <div class="input-group-append">
                         <input type="button" value="Áp dụng" class="btn btn-success">
                     </div>
@@ -88,7 +78,7 @@
             <table class="table table-bordered">
                 <tr>
                     <td>Tổng giá đơn hàng</td>
-                    <td>$10,000</td>
+                    <td><?=$total_price?> VND</td>
                 </tr>
                 <tr>
                     <td>Cần nạp thêm</td>

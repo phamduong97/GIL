@@ -31,6 +31,11 @@ class CheckoutController extends BaseController{
             "pathtext"=>"Đơn hàng",
             "product"=>$_SESSION['cart']
         );
+        if(isset($_SESSION['vcode'])){
+            $data['voucher'] = $_SESSION['vcode'];
+        }else{
+            $data['voucher'] = "";
+        }
         $this->render("checkout",$data);
     }
     public function destroycart(){

@@ -14,6 +14,8 @@
     </thead>
     <tbody>
         <?php
+        // echo "<pre>";
+        // print_r($product);
         $total_price = 0;
         foreach ($product as $key => $value) {
             $total_price+= $value['price']*$value['quantity'];
@@ -101,7 +103,7 @@
                     <button class="btn btn-danger w-100" onclick="destroyCart()">Hủy rỏ hàng</button>
                 </div>
                 <div class="col-md-4" style="">
-                    <button class="btn btn-secondary w-100">Thanh toán</button>
+                    <a href="<?=rootPath."?controller=checkout&action=checkout"?>" class="btn btn-secondary w-100">Thanh toán</a>
                 </div>
             </div>
         </div>
