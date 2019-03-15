@@ -23,8 +23,8 @@
                     <div class="col-md-3">
                         <div class="f-item-label">Chăm sóc khách hàng</div>
                         <div class="f-item-content">
-                            <div><a href="">Hỏi và trả lời</a></div>
-                            <div><a href="">Bảo hành</a></div>
+                            <div><a href="?controller=support&action=faq">Hỏi và trả lời</a></div>
+                            <div><a href="?controller=support&action=maintance">Bảo hành</a></div>
                         </div>
                     </div>
                     <div class="col-md-3">

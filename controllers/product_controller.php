@@ -1,6 +1,7 @@
 <?php
 include "controllers/base_controller.php";
 include_once "models/Product.php";
+include_once "models/Category.php";
 class ProductController extends BaseController{
     public function __construct()
     {
@@ -12,11 +13,27 @@ class ProductController extends BaseController{
             "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
             "pathtext"=>"Tìm kiếm"
         );
-        $data['product']=Product::getAll();
-        if(isset($_GET['tag'])){
-            $data['tag']=$_GET['tag'];
-        }
+        $data['product'] = Product::searchProducts(array(
+            "keyword"=>$_POST['keyword'],
+            "category"=>0,
+            "inwhere"=> "name",
+            "counter" => 10,
+            "sortmode"=>1
+        ));
+        $data['category']=Category::getAllCategory();
+        $data['keyword'] = isset($_POST['keyword'])?$_POST['keyword']:"";
         $this->render("search",$data);
+    }
+    public function getProducts(){
+        $data = array(
+            "keyword"=>$_POST['keyword'],
+            "category"=>$_POST['category'],
+            "inwhere"=> $_POST['inwhere'],
+            "counter" => $_POST['counter'],
+            "sortmode"=>$_POST['sortmode']
+        );
+        $result = Product::searchProducts($data);
+        print_r(json_encode($result));
     }
     public function view(){
         if(!isset($_GET["code"])){

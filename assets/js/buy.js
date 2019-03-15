@@ -37,8 +37,8 @@ function destroyCart(){
             "btndestroy": true
         },
         success: function(data,statcode){
-            alert(data);
-            window.location.href="?controller=product&action=search"
+            // alert(data);
+            window.location.href="http://localhost/gil/index.php";
         }
     })
 }

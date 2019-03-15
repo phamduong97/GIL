@@ -13,5 +13,6 @@ class HomeController extends BaseController{
         );
         $this->render('index',$data);
     }
+    
 }
 ?>

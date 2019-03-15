@@ -2,7 +2,7 @@
 include_once "connection.php";
 class Category{
     public static function getAllCategory(){
-        $sql = "SELECT id,name FROM category";
+        $sql = "SELECT id,name,sortname FROM category";
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->execute();
         $data = array();

@@ -1,22 +1,34 @@
+<script>var search_res;</script>
 <h4>TÌM KIẾM</h4>
 <div id="p-search-bar" class="row">
     <form action="" class="form-inline w-100">
         <div class="input-group col-sm-6">
             <div class="input-group-prepend">
-                <input type="button" class="btn btn-danger" value="Tìm kiếm">
+                <input type="button" class="btn btn-danger" id="sbtn" value="Tìm kiếm">
             </div>
-            <input type="text" class="form-control" placeholder="Từ khóa">
+            <input type="text" name="keysearch" value="<?=$keyword?>" class="form-control" placeholder="Từ khóa">
         </div>
         <div class="input-group col-lg-3 col-sm-6">
-            <select name="" id="" class="custom-select">
-                <option value="action">Hành động</option>
+            <select name="category" id="" class="custom-select">
+                <option value="0" selected>---Tất cả thể loại---</option>
+                <?php
+                foreach ($category as $key => $value) {
+                    ?>  
+                    <option value="<?=$key?>"><?=$value?></option>
+                    <?php
+                }
+                ?>
             </select>
         </div>
         
         <div class="input-group col-lg-3">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input">
-                <label for="" class="form-check-label">Tìm trong miêu tả sản phẩm</label>
+                <input type="checkbox" name="inwhere" value="name" class="form-check-input" checked>
+                <label for="" class="form-check-label">Tên sản phẩm</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="inwhere" value="description" class="form-check-input">
+                <label for="" class="form-check-label">miêu tả sản phẩm</label>
             </div>
         </div>
         
@@ -38,23 +50,23 @@
             <div class="input-group-prepend">
                 <div class="input-group-text">Sắp xếp theo</div>    
             </div>
-            <select name="" id="" class="custom-select">
-                <option value="">Tên(A-Z)</option>
-                <option value="">Tên(Z-A)</option>
-                <option value="">Giá(Thấp-Cao)</option>
-                <option value="">Giá(Cao-Thấp)</option>
+            <select name="sortmode" id="" class="custom-select">
+                <option value="1">Tên(A-Z)</option>
+                <option value="2">Tên(Z-A)</option>
+                <option value="3">Giá(Thấp-Cao)</option>
+                <option value="4">Giá(Cao-Thấp)</option>
             </select>
         </div>
         <div class="input-group col-sm-3">
             <div class="input-group-prepend">
                 <div class="input-group-text">Số lượng hiển thị</div>    
             </div>
-            <select name="" id="" class="custom-select">
-                <option value="">10</option>
-                <option value="">20</option>
-                <option value="">30</option>
-                <option value="">40</option>
-                <option value="">50</option>
+            <select name="counter" id="" class="custom-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
             </select>
         </div>
     </form>
@@ -116,6 +128,8 @@
     <!-- Danh sách lưới -->
     <div class="row" id="net-list">
         <?php
+        if(!isset($_POST['hsbtn'])) header("location: index.php");
+        if(sizeof($product)==0) echo "<div class='text-center w-100'>Không tìm thấy sản phẩm phù hợp</div>";
         foreach ($product as $key => $value) {
             # code...
         ?>

@@ -1,0 +1,36 @@
+#faqsearch{
+    margin-bottom: 20px;
+}
+
+#faqresult{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#faqresult .item{
+    border-bottom: 2px solid white;
+}
+
+#faqresult .item .question{
+    background-color: #df975b;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 0px;
+    cursor: pointer;
+    
+}
+#faqresult .item .question i{
+    transition: ease 100ms
+}
+#faqresult .item .question i.active{
+    transform: rotate(90deg)
+}
+#faqresult .item .answer{
+    color: white;
+    background-color: #5186b5;
+    padding: 20px;
+}
+#faqresult .item:last-child{
+    border-bottom: 0px solid white;
+}

@@ -12,6 +12,34 @@ class Product{
         }
         return $data;
     }
+    public static function searchProducts($data){
+        extract($data);
+        $sortsql ="";
+        switch ($sortmode) {
+            case 1:
+                $sortsql = " ORDER BY name ASC";
+                break;
+            case 2:
+                $sortsql = " ORDER BY name DESC";
+                break;
+            case 3:
+                $sortsql = " ORDER BY price ASC";
+                break;
+            case 4:
+                $sortsql = " ORDER BY price DESC";
+                break;
+        }
+        $inwheresql = ($inwhere=="1")?" name like '%$keyword%' AND description like '%$keyword%'":($inwhere=="0"?" 1=1":" {$inwhere} like '%$keyword%'");
+        $catesql = $category==0?"":" AND category_id={$category}";
+        $sql = "SELECT * FROM product WHERE".$inwheresql.$catesql.$sortsql." LIMIT {$counter}";
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+        $data = array();
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            $data[] = $row;
+        }
+        return $data;
+    }
     public static function create($data){
         // echo "<pre>";
         extract($data);

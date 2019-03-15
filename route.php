@@ -2,12 +2,14 @@
 $controlList = array(
     'home'=>['index'],
     'account'=>['login'],
-    'product'=>['search','view','addcart'],
-    'checkout'=>['cart','checkout','destroycart','voucher']
+    'product'=>['search','view','addcart','getProducts'],
+    'checkout'=>['cart','checkout','destroycart','voucher'],
+    'support'=>['faq','maintance']
 );
 $adminList = array(
     'product'=>['create','index']
 );
+
 
 if($controller=="admin"){
     $act = explode('/',$action);
