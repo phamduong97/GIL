@@ -33,6 +33,7 @@ class ProductController extends BaseController{
             "sortmode"=>$_POST['sortmode']
         );
         $result = Product::searchProducts($data);
+        
         print_r(json_encode($result));
     }
     public function view(){

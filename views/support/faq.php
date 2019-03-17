@@ -2,84 +2,35 @@
     <script src="assets/js/faq.js"></script>
     <h4>CÁC CÂU HỎI THƯỜNG GẶP</h4>
     <div id="faqsearch" class="input-group">
-        <input type="text" name="" id="" class="form-control">
+        <input type="text"  name="ticket_key" id="" class="form-control">
         <div class="input-group-append">
             <input type="button" value="Tìm kiếm" class="btn btn-dark">
         </div>
     </div>
+    <?php
+    if(isset($_SESSION['ticket_add']) && $_SESSION['ticket_add']==true){
+        unset($_SESSION['ticket_add']);
+        echo '<div class="alert alert-success">Câu hỏi của bạn đã được gửi.</div>';
+    }
+    ?>
+    
     <div id="faqresult">
+        <?php
+        foreach ($ticket as $key => $value) {
+        ?>
         <div class="item">
-            <div class="question" id="q1" data-toggle="collapse" data-target="#a1">
+            <div class="question" id="q<?=$key?>" data-toggle="collapse" data-target="#a<?=$key?>">
                 <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
+                <?=$value['question']?>
             </div>
-            <div class="collapse" id="a1">
-                <div class="answer">Ngủ</div>
+            <div class="collapse" id="a<?=$key?>">
+                <div class="answer"><?=$value['answer']?></div>
             </div>
         </div>
-        <div class="item">
-            <div class="question" id="q2" data-toggle="collapse" data-target="#a2">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a2">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="question" id="q3" data-toggle="collapse" data-target="#a3">
-                <i class="far fa-arrow-alt-circle-right"></i>
-                Cách để nạp tiền vào tài khoản
-            </div>
-            <div class="collapse" id="a3">
-                <div class="answer">Ngủ</div>
-            </div>
-        </div>
+        <?php
+        }
+        ?>
+        
     </div>
     <button class="btn btn-primary" data-toggle="modal" data-target="#submission">Bạn cần hỗ trợ ?</button>
     <div class="modal fade" id="submission" tabindex="-1" role="dialog">
@@ -90,6 +41,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
+            <form action="?controller=support&action=ticket" method="post">
             <div class="modal-body">
                 <div class="form-group">
                     <label for="">Họ và tên</label>
@@ -102,13 +54,14 @@
                 </div>
                 <div class="form-group">
                     <label for="">Câu hỏi</label>
-                    <textarea name="" id="" class="form-control"></textarea>
+                    <textarea name="content" id="" class="form-control"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-primary">Gửi yêu cầu</button>
+                <button type="submit" name="smbtn" class="btn btn-primary">Gửi yêu cầu</button>
             </div>
+            </form>
             </div>
         </div>
     </div>

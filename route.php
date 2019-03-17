@@ -4,7 +4,7 @@ $controlList = array(
     'account'=>['login'],
     'product'=>['search','view','addcart','getProducts'],
     'checkout'=>['cart','checkout','destroycart','voucher'],
-    'support'=>['faq','maintance']
+    'support'=>['faq','maintance','ticket','search']
 );
 $adminList = array(
     'product'=>['create','index']
