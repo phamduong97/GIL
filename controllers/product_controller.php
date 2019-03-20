@@ -13,8 +13,9 @@ class ProductController extends BaseController{
             "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
             "pathtext"=>"Tìm kiếm"
         );
+        $data['keyword'] = isset($_POST['keyword'])?$_POST['keyword']:"";
         $data['product'] = Product::searchProducts(array(
-            "keyword"=>$_POST['keyword'],
+            "keyword"=> $data['keyword'],
             "category"=>0,
             "inwhere"=> "name",
             "counter" => 10,

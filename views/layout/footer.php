@@ -5,19 +5,19 @@
                     <div class="col-md-3">
                         <div class="f-item-label">Chuyên mục</div>
                         <div class="f-item-content">
-                            <div><a href="">Game online</a></div>
-                            <div><a href="">Game offline</a></div>
-                            <div><a href="">Game steam</a></div>
-                            <div><a href="">Game garena</a></div>
+                            <div><a href="#">Game online</a></div>
+                            <div><a href="#">Game offline</a></div>
+                            <div><a href="#">Game steam</a></div>
+                            <div><a href="#">Game garena</a></div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="f-item-label">Thông tin</div>
                         <div class="f-item-content">
-                            <div><a href="">Giới thiệu</a></div>
-                            <div><a href="">Game bản quyền là gì?</a></div>
-                            <div><a href="">Chính sách bảo mật</a></div>
-                            <div><a href="">Điều khoảng dịch vụ</a></div>
+                            <div><a href="?controller=home&action=intro">Giới thiệu</a></div>
+                            <div><a href="?controller=home&action=copyright">Game bản quyền là gì?</a></div>
+                            <div><a href="?controller=home&action=security">Chính sách bảo mật</a></div>
+                            <div><a href="?controller=home&action=term">Điều khoản dịch vụ</a></div>
                         </div>
                     </div>
                     <div class="col-md-3">

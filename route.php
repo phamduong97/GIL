@@ -1,6 +1,6 @@
 <?php
 $controlList = array(
-    'home'=>['index'],
+    'home'=>['index','intro','copyright','security','term'],
     'account'=>['login'],
     'product'=>['search','view','addcart','getProducts'],
     'checkout'=>['cart','checkout','destroycart','voucher'],
@@ -9,7 +9,6 @@ $controlList = array(
 $adminList = array(
     'product'=>['create','index']
 );
-
 
 if($controller=="admin"){
     $act = explode('/',$action);

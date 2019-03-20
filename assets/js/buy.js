@@ -8,8 +8,7 @@ function addcart(code,obj){
                 "code": code
             },
             success: function(data,statusCode){
-                console.log(data);
-                
+                alert("Đã thêm vào giỏ");
             }
         })
     }else{

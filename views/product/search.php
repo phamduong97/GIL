@@ -9,7 +9,9 @@
             <input type="text" name="keysearch" value="<?=$keyword?>" class="form-control" placeholder="Từ khóa">
         </div>
         <div class="input-group col-lg-3 col-sm-6">
-            <select name="category" id="" class="custom-select">
+            <select name="category" id="" class="custom-select" <?php
+                        if(isset($_GET['tag'])) echo "disabled";
+                    ?>>
                 <option value="0" selected>---Tất cả thể loại---</option>
                 <?php
                 foreach ($category as $key => $value) {
@@ -76,59 +78,30 @@
     <!-- <h5>Danh sách sản phẩm phù hợp</h5> -->
 <!-- Danh sách hàng -->
     <div id="row-list" style="display:none">
+        <?php
+        foreach ($product as $key => $value) {
+        ?>
         <div class="product row">
             <div class="thumbnail col-md-4">
-                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
+                <a href=""><img src="assets/image/product/<?php $thumbnail=explode(";",$value['image'])[0];echo $thumbnail;?>" alt="Hình ảnh sản phẩm"></a>
             </div>
             <div class="info col-md-8">
-                <div class="label"><a href="#">PUBG Steam Key</a></div>
-                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
-                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
+                <div class="label"><a href="<?=rootPath."?controller=product&action=view&code={$value['code']}"?>"><?=$value['name']?></a></div>
+                <!-- <div class="description"></div> -->
+                <div class="price"><span class="p1"><?=$value['price']?> VNĐ</span><span class="p2 ml-5"><?=$value['price']-($value['price']*$value['sale']/100)?> VNĐ</span></div>
                 <input type="button" name="fastbuybtn" value="Mua ngay" class="btn btn-danger">
-                <input type="button" name="addcartbtn" value="Thêm vào giỏ" class="btn btn-warning">
+                <input type="button" name="addcartbtn" value="Thêm vào giỏ" class="btn btn-warning" onclick="addcart('<?=$value['code']?>',undefined)">
             </div>
         </div>
-        <div class="product row">
-            <div class="thumbnail col-md-4">
-                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
-            </div>
-            <div class="info col-md-8">
-                <div class="label"><a href="#">PUBG Steam Key</a></div>
-                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
-                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
-                <input type="button" name="fastbuybtn" value="Mua ngay" class="btn btn-danger">
-                <input type="button" name="addcartbtn" value="Thêm vào giỏ" class="btn btn-warning">
-            </div>
-        </div>
-        <div class="product row">
-            <div class="thumbnail col-md-4">
-                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
-            </div>
-            <div class="info col-md-8">
-                <div class="label"><a href="#">PUBG Steam Key</a></div>
-                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
-                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
-                <input type="button" name="fastbuybtn" value="Mua ngay" class="btn btn-danger">
-                <input type="button" name="addcartbtn" value="Thêm vào giỏ" class="btn btn-warning">
-            </div>
-        </div>
-        <div class="product row">
-            <div class="thumbnail col-md-4">
-                <a href=""><img src="assets/image/steam_wallet_card_5-460x215-266x125.png" alt=""></a>
-            </div>
-            <div class="info col-md-8">
-                <div class="label"><a href="#">PUBG Steam Key</a></div>
-                <div class="description">Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$Key steam wallet 100$</div>
-                <div class="price"><span class="p1">100.000 VND</span><span class="p2 ml-5">90.000 VND</span></div>
-                <input type="button" name="fastbuybtn" value="Mua ngay" class="btn btn-danger">
-                <input type="button" name="addcartbtn" value="Thêm vào giỏ" class="btn btn-warning">
-            </div>
-        </div>
+        <?php
+        }
+        ?>
+        
     </div>
     <!-- Danh sách lưới -->
     <div class="row" id="net-list">
         <?php
-        if(!isset($_POST['hsbtn'])) header("location: index.php");
+        // if(!isset($_POST['hsbtn'])) header("location: index.php");
         if(sizeof($product)==0) echo "<div class='text-center w-100'>Không tìm thấy sản phẩm phù hợp</div>";
         foreach ($product as $key => $value) {
             # code...
