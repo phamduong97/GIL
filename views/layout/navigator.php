@@ -2,13 +2,13 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="nav-box">
                         <ul class="nav">
-                            <li class="nav-item"><a href="">Trang chủ</a></li>
+                            <li class="nav-item"><a href="?controller=home&action=index">Trang chủ</a></li>
                             <li class="nav-item"><a href="">Thể Loại</a>
                                 <ul>
-                                    <li><a href="#">Hành động</a>
+                                    <li><a href="?controller=product&action=search">Hành động</a>
                                         <ul>
                                             <li><a href="#">2D</a></li>
                                             <li><a href="#">3D</a></li>
@@ -23,8 +23,9 @@
                                     <li><a href="#">Trí tuệ</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a href="">Garena</a></li>
-                            <li class="nav-item"><a href="">Steam</a></li>
+                            <li class="nav-item"><a href="?controller=product&action=search&tag=Garena">Garena</a></li>
+                            <li class="nav-item"><a href="?controller=product&action=search&tag=Steam">Steam</a></li>
+                            <li class="nav-item"><a href="?controller=news&action=home">Tin tức</a></li>
                             <li class="nav-item"><a href="">Mua tại đại lý</a></li>
                             <li class="nav-item"><a href="">Nạp tiền</a>
                                 <ul>
@@ -36,22 +37,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3" id="cartbox">
-                    <div id="mycart">
-                        <i class="fa fa-shopping-bag"></i>
-                        <a href="?controller=checkout&action=cart"><span>0</span> Sản phẩm - <span>0</span> VNĐ</a>
-                        
-                    </div>
-                    <div style="position: relative;">
-                        <div id="mycart-box">
-                            Chưa có sản phẩm
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <script>
-    
-    </script>
 </div>
+<script>
+    $(document).ready(function(){
+        $(".nav li").hover(function(){
+            $(this).find("ul:first").slideDown(0);
+        },function(){
+            $(this).find("ul:first").hide(0);
+        });
+
+    });
+</script>

@@ -1,0 +1,72 @@
+#news {
+	padding: 30px 0 30px 0;
+	background-color: black;
+}
+.hotnews {
+	border: 2px solid grey;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px grey;
+}
+.news {
+	position: relative;
+	overflow: hidden;
+}
+.titlenews {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	font-size: 20px;
+	overflow: hidden;
+	color: black!important;
+}
+.news2 .news {
+  margin-top: 10px;
+}
+.news2 .news img{
+	margin-top: 8px;
+	width: 90%;
+	padding-left: 23px;
+}
+.news1 {margin: 20px 0 20px 0;}
+.news2 {margin-bottom: 20px;}
+.news2 .news:hover {
+	border: 1px solid blue;
+}
+.mainnews {
+	margin-top: 50px;
+}
+.mainnews .left {position: relative;}
+.mainnews .left .tintuc {
+	padding-bottom: 20px;
+	margin-top: 30px;
+	border-bottom: 1px solid white;
+}
+.tintuc .tieude{
+	font-size: 22px;
+	overflow: hidden;
+}
+.tintuc .chimuc {
+	font-size: 12px;
+	color: blue;
+}
+.tintuc .noidung {
+	padding-top: 10px;
+}
+.tinngan {
+	height: 100px;
+	border-bottom: 1px solid white;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.btnmore {
+    margin:30px 0 0 382px;
+}
+.videonews {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.videonews .video{
+	border: 2px solid grey;
+	box-shadow: 10px ;
+	border-radius: 5px;
+}

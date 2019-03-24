@@ -103,7 +103,7 @@
                     <button class="btn btn-danger w-100" onclick="destroyCart()">Hủy rỏ hàng</button>
                 </div>
                 <div class="col-md-4" style="">
-                    <a href="<?=rootPath."?controller=checkout&action=checkout"?>" class="btn btn-secondary w-100">Thanh toán</a>
+                    <a href="<?=rootPath."?controller=cart&action=checkout"?>" class="btn btn-secondary w-100">Thanh toán</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,17 @@
+#accountmanager {background-color: black;}
+ #accountmanager .rightbar {margin-top: 63px;border-left: 1px solid white;
+padding: 20px 20px;height: 390px;text-align: left;}
+#accountmanager .rightbar ul li {padding-top: 15px; border-bottom: 1px solid white;}
+#accountmanager .rightbar ul li:hover {background-color: blue;}
+#accountmanager .rightbar h5 {margin-left: 40px;}
+#accountmanager .wrap .leftbar {padding: 40px ;}
+#accountmanager .wrap {
+padding-bottom: 20px;
+}
+#accountmanager .wrap .content {border: 1px solid white;margin-top: 20px;border-radius: 5px;
+	box-shadow: 2px 2px grey;padding: 20px 20px;}
+#accountmanager .wrap .content form {
+	border-top: 1px solid grey;border-bottom: 1px solid grey;padding: 20px 20px;margin-top: 10px;}
+#accountmanager .wrap .content ul {margin: 20px 0;}
+#accountmanager .wrap .content ul li {padding: 10px 0;border-bottom: 1px solid grey;cursor: pointer;}
+#accountmanager .wrap .content ul li:hover{background:blue; color: red!important; }

@@ -1,7 +1,7 @@
 function addcart(code,obj){
     if(obj==undefined){
         $.ajax({
-            url:"http://localhost/gil/?controller=product&action=addcart",
+            url:"http://localhost/gil/?controller=cart&action=addcart",
             type:"post",
             dataType:"text",
             data:{
@@ -9,11 +9,15 @@ function addcart(code,obj){
             },
             success: function(data,statusCode){
                 alert("Đã thêm vào giỏ");
+                let num = parseInt($('#numproduct').html()) + 1;
+                if(data!=1){
+                    $('#numproduct').html(num);
+                }
             }
         })
     }else{
         $.ajax({
-            url:"http://localhost/gil/?controller=product&action=addcart",
+            url:"http://localhost/gil/?controller=cart&action=addcart",
             type:"post",
             dataType:"text",
             data:{
@@ -21,7 +25,7 @@ function addcart(code,obj){
                 "count": $(obj).parent().parent().children()[0].value
             },
             success: function(data,statusCode){
-                window.location.href="http://localhost/gil/?controller=checkout&action=cart";
+                window.location.href="http://localhost/gil/?controller=cart&action=view";
             }
         })
     }
@@ -29,7 +33,7 @@ function addcart(code,obj){
 
 function destroyCart(){
     $.ajax({
-        url: "http://localhost/gil/?controller=checkout&action=destroycart",
+        url: "http://localhost/gil/?controller=cart&action=destroycart",
         type:"post",
         dataType:"text",
         data:{
@@ -45,7 +49,7 @@ function destroyCart(){
 function addVoucher(){
     var vcode = $('input[name=vcode]').val();
     $.ajax({
-        url:"http://localhost/gil/?controller=checkout&action=voucher",
+        url:"http://localhost/gil/?controller=cart&action=voucher",
         type:"post",
         dataType:"text",
         data:{
@@ -59,8 +63,18 @@ function addVoucher(){
             if(data==1){
                 alert("Đã áp dụng voucher")
             }
-            // console.log(data);
+            console.log(data);
             
         }
     })
 }
+
+$(document).ready(function(){
+    if(sessionStorage.getItem('fmail')!=null){
+        $('[name=friendmail]').val(sessionStorage.getItem('fmail'));
+    }
+    $('[name=friendmail]').bind('change',function(){
+        sessionStorage.setItem('fmail',$(this).val());
+        console.log(sessionStorage);
+    })
+})

@@ -1,5 +1,7 @@
 <?php
 include_once "controllers/base_controller.php";
+include_once "models/Product.php";
+include_once "models/Account.php";
 class HomeController extends BaseController{
     public function __construct()
     {
@@ -11,6 +13,11 @@ class HomeController extends BaseController{
             "pathtext"=>"Trang chủ",
             "path"=>""
         );
+        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $limit = 9;
+        $data['product'] = Product::getAllProductsByPage($limit,$current_page);
+        
+        $data['data1'] = Product::getAllProducts();
         $this->render('index',$data);
     }
     public function intro(){
@@ -46,6 +53,16 @@ class HomeController extends BaseController{
             "path"=>""
         );
         $this->render("term",$data);
+    }
+    public function loginmember(){
+        $email = $_GET['email'];
+        $password = $_GET['password'];
+        $data = Account::login($email,$password);
+        $this->render("index",$data);
+    }
+
+    public function logout(){
+    	Account::logout();
     }
 }
 ?>

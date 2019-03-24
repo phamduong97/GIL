@@ -1,6 +1,5 @@
 <h3 class="text-center">Đơn hàng</h3>
 
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -82,7 +81,7 @@
                 </tr>
                 <tr>
                     <td>Cần nạp thêm</td>
-                    <td>$50,000</td>
+                    <td><?=($_SESSION['usermoney']-$total_price)<0?($total_price-$_SESSION['usermoney']):"0"?> VND</td>
                 </tr>
             </table>
             <div class="row">
@@ -90,7 +89,7 @@
                     <button class="btn btn-primary w-100">Nạp thêm</button>
                 </div>
                 <div class="col-md-6" style="">
-                    <button class="btn btn-secondary w-100">Thanh toán</button>
+                    <a href="?controller=cart&action=order" class="btn btn-secondary w-100">Thanh toán</a>
                 </div>
             </div>
         </div>

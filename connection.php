@@ -5,7 +5,7 @@ class DB{
     public static function getInstance(){
         if(!isset(self::$instance)){
             try{
-                self::$instance = new PDO("mysql:host=localhost;dbname=gil;charset=utf8","root","");
+                self::$instance = new PDO("mysql:host=localhost;dbname=gil_final;charset=utf8","root","");
                 
             }catch(PDOException $e){
                 die("Lỗi: ".$e->getMessage());

@@ -1,0 +1,49 @@
+#carts{
+	background-color: black;
+}
+#main .contentlast {
+	margin: 20px 0;
+	padding: 0px 10px;
+}
+#main .contentlast .box {
+	border: 1px solid white;
+	border-radius: 5px;
+	box-shadow: 2px 2px grey;
+	padding: 10px 10px;
+}
+#main .contentlast .box .title{
+	color: yellow;
+	text-align: center;
+	font-weight: 800;
+}
+#main .contentlast .box p{
+	font-size: 12px;
+}
+#main #right-section .outline .item{
+	cursor: pointer;
+}
+#main #right-section .outline .item:hover{
+	border: 2px solid grey;
+}
+#main #left-section #top-best .top5 {
+	margin-top: 40px;
+} 
+#main #left-section #top-best .top5 .product{
+	background-color: #444444;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 10px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+#main #left-section #top-best .top5 .product .label{
+	font-weight: 800;
+}
+#main #left-section #top-best .top5 .product .saleprice{
+	color: greenyellow;
+	font-weight: 600;
+}
+#main #left-section #top-best .top5 .product:hover {
+	border: 1px solid blue;
+	box-shadow: 2px 2px grey;
+}

@@ -1,0 +1,24 @@
+/*-----Register------*/
+#register { background-color: black; }
+.rightRegister {margin-bottom: 40px;}
+.rightRegister .path {
+  float: left;
+  padding: 16px 9px;
+}
+.rightRegister .content{
+  margin-top: 10px;
+  border: 1px solid white;
+  padding: 20px 20px;
+  border-radius: 4px;
+}
+.rightRegister .content form {
+ margin-left: 200px;
+}
+#register .sidebar, #register .sidebar {margin-top: 63px;border-left: 1px solid white;
+  padding: 20px 20px;height: 390px;text-align: left;}
+ #register .sidebar ul li {padding-top: 15px; border-bottom: 1px solid white;}
+#register .sidebar ul li:hover {background-color: blue;}
+#register .sidebar h5 {margin-left: 40px;}
+#register .content form {margin-top: 20px;}
+#register .btnResgiter{margin-left: 125px;}
+#register .content{background: #191919;}

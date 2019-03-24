@@ -1,7 +1,7 @@
 <?php
-include "connection.php";
+include_once "connection.php";
 class Product{
-    public static function getAll(){
+    public static function getAllProducts(){
         $sql = "SELECT * FROM product";
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->execute();
@@ -96,6 +96,34 @@ class Product{
         $row['status']="Không rõ";
         return $row;
     }
+
+    public static function getAllProductsByPage($limit,$current_page){
+		$result = array();
+		$sql = "SELECT * FROM product";
+		$stmt = DB::getInstance()->prepare($sql);
+		$stmt->execute();
+	    $total_records= $stmt->rowCount();
+	     $total_page = ceil($total_records / $limit);
+	     $_SESSION['total_page'] = $total_page;
+	     if ($current_page > $total_page){
+	     	$current_page = $total_page;
+	     }
+	     else if ($current_page < 1){
+	     	$current_page = 1;
+	     }
+
+         $start = ($current_page - 1) * $limit;
+         $sql1 = "SELECT * FROM product LIMIT $start, $limit";
+         $stmt1 = DB::getInstance()->prepare($sql1);
+         $stmt1->execute();
+         $count= $stmt1->rowCount();
+         if($count>0){
+	    	while($row = $stmt1->fetch(PDO::FETCH_ASSOC)){
+	    		$result[] = $row;
+	    	}
+	    }
+	    return $result;
+	}
 }
 ?>
 

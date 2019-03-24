@@ -1,10 +1,13 @@
 <?php
 $controlList = array(
-    'home'=>['index','intro','copyright','security','term'],
-    'account'=>['login'],
-    'product'=>['search','view','addcart','getProducts'],
-    'checkout'=>['cart','checkout','destroycart','voucher'],
-    'support'=>['faq','maintance','ticket','search']
+    'home'=>['index','intro','copyright','security','term','loginmember','logout'],
+    'account'=>['login','forgetpass','sendmail','resetpass',
+                'changepass','accountmanager','processaddmoney','register',
+                'registermember','news','newdetail','order'],
+    'product'=>['search','view','getProducts'],
+    'support'=>['faq','maintance','ticket','search'],
+    'cart'=>['view','destroycart','checkout','voucher','addcart','order'],
+    'news'=>['home','detail','comment']
 );
 $adminList = array(
     'product'=>['create','index']

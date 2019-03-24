@@ -39,10 +39,12 @@
 #net-list .thumbnail{
     position: relative;
     overflow: hidden;
+    height:150px
 }
 
 #net-list .thumbnail img{
     width: 100%;
+    height: 100%;
 }
 
 #net-list .label{

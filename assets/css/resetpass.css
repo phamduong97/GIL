@@ -1,0 +1,11 @@
+#resetpass {background-color: black;padding: 40px 0;}
+#resetpass .content {
+	background-color: #273b58;
+	padding: 20px 0;
+	border-radius: 4px;
+	box-shadow: 2px 2px grey;
+}
+#resetpass .content .wrap {
+    padding-left: 33%;
+    
+}

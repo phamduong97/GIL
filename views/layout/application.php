@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?=$title?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.min.css" />
+    
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
@@ -13,6 +17,10 @@
     <script src="ckeditor/ckeditor.js"></script>
     <script src="assets/js/buy.js"></script>
     <script src="assets/js/search.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
 </head>
 <body>
     <?php include "views/layout/header.php"?>
