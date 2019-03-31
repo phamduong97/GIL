@@ -1,5 +1,9 @@
 <h3 class="text-center">Đơn hàng</h3>
-
+<?php
+if(isset($_GET['error']) && $_GET['error']=='outbalace'){
+    echo "<div  class='alert alert-danger'>Vui lòng nạp thêm tiền</div>";
+}
+?>
 <table class="table table-hover">
     <thead>
         <tr>

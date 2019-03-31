@@ -1,3 +1,10 @@
+h4.title{
+    background-color: #000000a1;
+    margin: 0;
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+}
+
 #net-list+#row-list{
     position: absolute;
     top: 0;
@@ -8,7 +15,7 @@
     text-align: center;
     position: relative;
     padding: 10px;
-    background: #444444
+    background: #000000ab;
 }
 
 #net-list a{
@@ -56,12 +63,14 @@
     font-size: 14px
 }
 #net-list .price{
-    color: rgb(253, 66, 66);
-    text-decoration-line: line-through
+    color: rgb(255, 255, 255);
+    text-decoration-line: line-through;
+    background-color: #ff4e4e;
 }
 
 #net-list .saleprice{
-    color: greenyellow
+    color: white;
+    background-color: #56de5b;
 }
 
 #net-list .addcartbtn{
@@ -81,10 +90,12 @@
     background-color: #ff2626;
     transition: ease 600ms
 }
-
+#row-list .product:hover{
+    box-shadow: 0 0 0 1px #3fd3ff
+}
 #row-list .product{
     margin: 10px 0;
-    background: #444444
+    background: #000000c7;
 }
 
 #row-list .thumbnail{
@@ -126,8 +137,8 @@
 
 #p-image{
     padding: 15px;
-    background-color: #151515;
-    border-radius: 15px;
+    background-color: #00000054;
+    border-radius: 0 0 15px 15px;
 }
 #p-image .active{
 
@@ -150,11 +161,11 @@ overflow: hidden;
     height: 20px;
 }
 #thumbnail-box::-webkit-scrollbar-track{
-    background-color: #3b3b3b;
+    background-color: #364a84;
     border-radius: 0px 0px 8px 8px;
 }
 #thumbnail-box::-webkit-scrollbar-thumb{
-    background-color: #0b0b0b;
+    background-color: #ffffff;
     border-radius: 0px 0px 8px 8px;
 }
 #list-image{
@@ -219,13 +230,13 @@ overflow: hidden;
     border-bottom: 1px solid rgb(95, 95, 95);
 }
 
-.editor .btn{
+/* .editor .btn{
     position: absolute;
     bottom: 0;
     z-index: 200;
     margin: 5px;
     right: 0;
-}
+} */
 
 .comment{
     margin-top: 10px
@@ -245,5 +256,42 @@ overflow: hidden;
     font-size: 15pt
 }
 .c-text{
+    word-wrap: break-word;
+}
+.c-rate a{
+    cursor: pointer;
+    transform: 50ms ease;
+}
+.c-rate a:hover i{
+    color: rgb(255, 112, 112);
+}
+#top5-list .product{
+    margin: 10px 0;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    background: #0f0f0f;
+}
 
+#top5-list .thumbnail{
+    position: relative;
+    overflow: hidden;
+    height:150px
+}
+
+#top5-list .thumbnail img{
+    width: 100%;
+    height: 100%;
+}
+
+#top5-list .label{
+    padding: 5px 0;
+    font-weight: 700;
+
+}
+#net-list .product .label,#row-list .product .label{
+    transition: 50ms ease
+}
+#net-list .product .label:hover a,#row-list .product .label:hover a{
+    color: rgb(255, 200, 50)
 }

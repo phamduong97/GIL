@@ -8,8 +8,9 @@
 #main .contentlast .box {
 	border: 1px solid white;
 	border-radius: 5px;
-	box-shadow: 2px 2px grey;
+	box-shadow: 3px 3px 4px white;
 	padding: 10px 10px;
+	height: 100%;
 }
 #main .contentlast .box .title{
 	color: yellow;
@@ -23,7 +24,7 @@
 	cursor: pointer;
 }
 #main #right-section .outline .item:hover{
-	border: 2px solid grey;
+	/* border: 2px solid grey; */
 }
 #main #left-section #top-best .top5 {
 	margin-top: 40px;

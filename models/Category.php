@@ -7,7 +7,10 @@ class Category{
         $stmt->execute();
         $data = array();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $data[$row['id']]=$row['name'];
+            $data[$row['id']]= array(
+                "name"=>$row['name'],
+                'tag'=>$row['sortname']
+            );
         }
         return $data;
     }

@@ -1,11 +1,11 @@
-#forgetpass {background-color: black;}
+#forgetpass {/* background-color: black; */}
  #forgetpass .rightbar {margin-top: 63px;border-left: 1px solid white;
 padding: 20px 20px;height: 390px;text-align: left;}
 #forgetpass .rightbar ul li {padding-top: 15px; border-bottom: 1px solid white;}
 #forgetpass .rightbar ul li:hover {background-color: blue;}
 #forgetpass .rightbar h5 {margin-left: 40px;}
 #forgetpass .content {padding: 20px 10px;}
-#forgetpass .wrap .leftbar {padding: 40px ;}
+#forgetpass .wrap .leftbar {padding: 40px 0;}
 #forgetpass .wrap {
 padding-bottom: 20px;
 }

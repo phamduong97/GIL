@@ -12,6 +12,31 @@ class Product{
         }
         return $data;
     }
+
+    public static function getLastestProducts(){
+        $sql = "SELECT * FROM product ORDER BY release_date DESC LIMIT 10";
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->rowCount();
+        $data = array();
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            $data[] = $row;
+        }
+        return $data;
+    }
+
+    public static function getTop5(){
+        $sql = "SELECT distinct product.*,SUM(order_detail.quantity) as num
+        FROM product,order_detail
+        WHERE product.ID=order_detail.product_id
+        GROUP BY order_detail.product_id
+        ORDER BY num DESC";
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    
     public static function searchProducts($data){
         extract($data);
         $sortsql ="";
@@ -29,9 +54,15 @@ class Product{
                 $sortsql = " ORDER BY price DESC";
                 break;
         }
-        $inwheresql = ($inwhere=="1")?" name like '%$keyword%' AND description like '%$keyword%'":($inwhere=="0"?" 1=1":" {$inwhere} like '%$keyword%'");
+        $inwheresql = ($inwhere=="1")?" product.name like '%$keyword%' AND product.description like '%$keyword%'":($inwhere=="0"?" 1=1":" product.{$inwhere} like '%$keyword%'");
         $catesql = $category==0?"":" AND category_id={$category}";
-        $sql = "SELECT * FROM product WHERE".$inwheresql.$catesql.$sortsql." LIMIT {$counter}";
+        if(isset($_GET['tag'])){
+            $tagsql = " AND category_id=category.id AND sortname='{$_GET['tag']}'";
+        }else{
+            $tagsql = "";
+        }
+        $sql = "SELECT distinct product.* FROM product,category WHERE".$inwheresql.$catesql.$tagsql.$sortsql." LIMIT {$counter}";
+        // var_dump($sql);
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->execute();
         $data = array();
@@ -123,7 +154,38 @@ class Product{
 	    	}
 	    }
 	    return $result;
-	}
+    }
+    public static function addComment($pid,$content,$uid)
+    {
+        $sql="INSERT INTO comment(content,customer_id,product_id) VALUES(?,?,?)";
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->bindParam(1,$content);
+        $stmt->bindParam(2,$uid);
+        $stmt->bindParam(3,$pid);
+        if($stmt->execute()){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    public static function getComment($id)
+    {
+        $sql = "SELECT comment.*,customer.name FROM comment LEFT JOIN customer ON customer.id=comment.customer_id WHERE product_id='{$id}' ORDER BY date_create DESC";
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $row;
+    }
+    public static function delComment($id)
+    {
+        $sql = "DELETE FROM comment WHERE id = $id";
+        $stmt = DB::getInstance()->prepare($sql);
+        if($stmt->execute()){
+            return "Deleted";
+        }else{
+            return "Failed";
+        }
+    }
 }
 ?>
 

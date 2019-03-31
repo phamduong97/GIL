@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     function psearch(){
         $.ajax({
-            type: "post",
+            type: "get",
             url: "?controller=product&action=getProducts",
             data: {
                 "keyword":$('[name=keysearch]').val(),
@@ -125,7 +125,7 @@ $(document).ready(function(){
                 if(JSON.stringify(res)!='[]'){
                     for (const element in res) {
                         temp+=`<div class="item">
-                        <div class="question" id="q${element}>" data-toggle="collapse" data-target="#a${element}">
+                        <div class="question" id="q${element}" data-toggle="collapse" data-target="#a${element}">
                             <i class="far fa-arrow-alt-circle-right"></i>
                             ${res[element].question}
                         </div>

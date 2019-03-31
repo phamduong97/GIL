@@ -52,31 +52,31 @@ function checkValidate() {
         }
 </script>
 <div class="row">
-    <div class="col-lg-9 rightLogin">
+    <div class="col-lg-12 rightLogin">
         <div style="clear: both;"></div>
         <div class="content">
             <form method="get" onsubmit="return checkValidate();">
                 <input type="hidden" name="controller" value="home">
                 <input type="hidden" name="action" value="loginmember">
-                <div class="form-group form1" >
-                    <label style="margin-right: 395px">Địa chỉ Email:</label>
-                    <input type="text" class="form-control" id="txtUser" placeholder="Enter phone number or email" name="email" style="width: 400px;">
-                    <p style="color: red;" id="lbUser"></p>
-                </div>
-                <div class="form-group2 form2">
-                    <label style="margin-right: 501px;">Mật khẩu:</label>
-                    <input type="password" class="form-control" id="txtPass" placeholder="Enter password" name="password" style="width: 395px;">
-                    <p style="color: red;" id="lbPass"></p>
-                    <div style="margin-top: 10px; margin-right: 454px;"><a href="?controller=account&action=forgetpass" target="_blank" style="text-decoration: none;">Quên mật khẩu ?</a></div>
-                </div>
+                
                 <?php 
                     if(isset($_GET['fail'])){
                     ?>
-                    <div class="alert alert-danger" style="width: 393px;">Sai thông tin đăng nhập</div>
+                    <div class="alert alert-danger">Sai thông tin đăng nhập</div>
                     <?php 
                     }
-                    ?>
+                ?>
+                <div class="form-group" >
+                    <label style="">Tên đăng nhập / Địa chỉ Email</label>
+                    <input type="text" class="form-control" id="txtUser" placeholder="Enter username or email" name="email" style="">
+                </div>
+                <div class="form-group">
+                    <label style="">Mật khẩu</label>
+                    <input type="password" class="form-control" id="txtPass" placeholder="Enter password" name="password" style="">
+                </div>
+                
                 <input type="submit" value="Đăng nhập" class="btn btn-warning" name="btnLogin">
+                <a href="?controller=account&action=forgetpass" target="_blank" style="text-decoration: none;vertical-align:middle">Quên mật khẩu ?</a>
                 <div class="text">Hoặc đăng nhập bằng :</div>
                 <div class="socialIcon">
                     <a href="https://www.facebook.com" title="Facebook" class="btn btn-facebook btn-lg fb" target="_blank"><i class="fab fa-facebook fa-fw"></i> Facebook</a>
@@ -93,7 +93,7 @@ function checkValidate() {
             <a class="btn btn-warning" href="?controller=account&action=register" style="margin-top: 10px;">Đăng ký</a>
         </div>
     </div>
-    <div class="col-lg-3 sidebar">
+    <!-- <div class="col-lg-3 sidebar">
         <h5>TÀI KHOẢN</h5>
         <ul>
             <li><a href="?controller=account&action=login">Đăng nhập</a></li>
@@ -104,7 +104,7 @@ function checkValidate() {
             <li><a href="#">Giao dịch</a></li>
             <li><a href="?controller=account&action=order">Đơn hàng</a></li>
         </ul>
-    </div>
+    </div> -->
 </div>
 <div class="clearfix"></div>
 <?php 

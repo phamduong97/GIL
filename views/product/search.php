@@ -1,5 +1,16 @@
 <script>var search_res;</script>
-<h4>TÌM KIẾM</h4>
+<h4><?php
+if(isset($_GET['tag'])){
+    foreach ($category as $key => $value) {
+        if($value['tag']==$_GET['tag']){
+            echo $value['name'];
+            break;
+        }
+    }
+}else{
+    echo "TÌM KIẾM";
+}
+?></h4>
 <div id="p-search-bar" class="row">
     <form action="" class="form-inline w-100">
         <div class="input-group col-sm-6">
@@ -16,7 +27,7 @@
                 <?php
                 foreach ($category as $key => $value) {
                     ?>  
-                    <option value="<?=$key?>"><?=$value?></option>
+                    <option value="<?=$key?>" <?=(isset($_GET['tag']) && $value['tag']==$_GET['tag'])?"selected":""?>><?=$value['name']?></option>
                     <?php
                 }
                 ?>

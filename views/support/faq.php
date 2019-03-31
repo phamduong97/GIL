@@ -37,23 +37,23 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Biểu mẫu yêu cầu hỗ trợ</h5>
+                <h5 class="modal-title" style="color:rgba(0,0,0,0.8)">Biểu mẫu yêu cầu hỗ trợ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <form action="?controller=support&action=ticket" method="post">
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="">Họ và tên</label>
+                    <label for="" style="color:rgba(0,0,0,0.8)">Họ và tên</label>
                     <input type="text" name="name" id="" class="form-control" placeholder="Nhập tên">
                 </div>
                 
                 <div class="form-group">
-                    <label for="">Email</label>
+                    <label for="" style="color:rgba(0,0,0,0.8)">Email</label>
                     <input type="text" name="email" id="" class="form-control" placeholder="Nhập email">
                 </div>
                 <div class="form-group">
-                    <label for="">Câu hỏi</label>
+                    <label for="" style="color:rgba(0,0,0,0.8)">Câu hỏi</label>
                     <textarea name="content" id="" class="form-control"></textarea>
                 </div>
             </div>

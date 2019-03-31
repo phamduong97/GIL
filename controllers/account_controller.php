@@ -13,6 +13,9 @@ class AccountController extends BaseController{
             'pathtext'=>"Đăng nhập",
             'title'=>"Đăng nhập"
         );
+        if(isset($_GET['checkout'])){
+            $_SESSION['checkout']=$_GET['checkout'];
+        }
         $this->render("login",$data);
     } 
     
@@ -78,13 +81,17 @@ class AccountController extends BaseController{
         $sale= $_GET['sale'];
         $series= $_GET['series'];
         $code= $_GET['code'];
-        $member = new Account();
-        $data= $member->addmoney($id,$sale,$series,$code);
-        $this->render("addmoney",array(),array());
+        Account::addmoney($id,$sale,$series,$code);
+        $this->render("addmoney");
     }
 
      public function register(){
-        $this->render("register",array(),array());
+        $data= array(
+            "path"=>"",
+            "pathtext"=>"Đăng ký tài khoản",
+            "title"=>"Đăng ký tài khoản"
+        );
+        $this->render("register",$data);
     }
     public function registermember(){
         $name = $_GET['name'];

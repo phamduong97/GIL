@@ -16,7 +16,7 @@ class HomeController extends BaseController{
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
         $limit = 9;
         $data['product'] = Product::getAllProductsByPage($limit,$current_page);
-        
+        $data['lastest'] = Product::getLastestProducts();
         $data['data1'] = Product::getAllProducts();
         $this->render('index',$data);
     }
@@ -58,6 +58,10 @@ class HomeController extends BaseController{
         $email = $_GET['email'];
         $password = $_GET['password'];
         $data = Account::login($email,$password);
+        if(isset($_SESSION['logged_in'],$_SESSION['checkout']) & $_SESSION['checkout']==1){
+            unset($_SESSION['checkout']);
+            header('location: ?controller=cart&action=checkout');
+        }
         $this->render("index",$data);
     }
 

@@ -70,28 +70,32 @@ class Account{
 	}
 
 	public function addmoney($id,$sale,$series,$code){
-		$query = "SELECT * FROM users WHERE userid=:u limit 0,1";
+		$query = "SELECT * FROM customer WHERE id=:u limit 0,1";
 		$stms = DB::getInstance()->prepare($query);
 		$stms->bindParam(":u",$id);
 		$stms->execute();
+
 		$data = $stms->fetch(PDO::FETCH_ASSOC);
 		$add = $sale + $_SESSION['usermoney'];
-		$sql = "SELECT *  FROM cards WHERE series =:s and code=:c ";
+
+		$sql = "SELECT code FROM garena_card WHERE series =:s and code=:c and cost=:x";
 		$stmt = DB::getInstance()->prepare($sql);
 		$stmt->bindParam(":s",$series);
 		$stmt->bindParam(":c",$code);
+		$stmt->bindParam(":x",$sale);
 		$stmt->execute();
+		
 		$count = $stmt->rowCount();
 		if($count>0){
-			$sql1 = "UPDATE users SET balance=:b WHERE userid =:u  ";
+			$sql1 = "UPDATE customer SET balance=:b WHERE id =:u";
 			$stmt1 = DB::getInstance()->prepare($sql1);
 			$stmt1->bindParam(":b",$add);
 			$stmt1->bindParam(":u",$id);
 			$stmt1->execute();
-				header("location: ?controller=account&action=addmoney&success");
+			$_SESSION['usermoney'] = $add;
+			header("location: ?controller=account&action=addmoney&success");
 		}else{
-				header("location: ?controller=account&action=addmoney&fail");
-
+			header("location: ?controller=account&action=addmoney&fail");
 		}
 	}
 
@@ -121,14 +125,19 @@ class Account{
 	}
 
 	public function register($name,$fullname,$email,$mobile,$pass){
-		$sql = "INSERT INTO users SET name=:n,fullname=:f,email=:e,mobile=:m,password=:p";
-		$stmt = DB::getInstance()->prepare($sql);
-		$stmt->bindParam(":n", $name);
-		$stmt->bindParam(":f", $fullname);
-		$stmt->bindParam(":e", $email);
-		$stmt->bindParam(":m", $mobile);
-		$stmt->bindParam(":p", $pass);
-		if($stmt->execute()){
+		$query = "INSERT INTO account(username,password,role) VALUES('$name','$pass',1)";
+		$stmt = DB::getInstance()->prepare($query);
+		$stmt->execute();
+		$lastid = DB::getInstance()->lastInsertId();
+		
+		$sql = "INSERT INTO customer SET id=:i,name=:n,fullname=:f,email=:e,mobile=:m";
+		$stmt2 = DB::getInstance()->prepare($sql);
+		$stmt2->bindParam(":i", $lastid);
+		$stmt2->bindParam(":n",$name);
+		$stmt2->bindParam(":f", $fullname);
+		$stmt2->bindParam(":e", $email);
+		$stmt2->bindParam(":m", $mobile);
+		if($stmt2->execute()){
 		   header("location: ?controller=account&action=register&success=1");	
 		}else{
 		   header("location: ?controller=account&action=login");	
@@ -137,7 +146,7 @@ class Account{
 	}
 
 	public static function login($email,$password){
-		$query= "SELECT * FROM customer,account Where account.id=customer.id and email=:e and password=:p limit 0,1";
+		$query= "SELECT * FROM customer,account Where account.id=customer.id and (customer.email=:e OR account.username=:e ) and account.password=:p  limit 0,1";
 		$stmt = DB::getInstance()->prepare($query);
 		$stmt->bindParam(":e", $email);
 		$stmt->bindParam(":p", $password);
@@ -159,7 +168,15 @@ class Account{
     
 	public static function getOrderById($id){
 		$result = array();
-		$sql = "SELECT * FROM `order` INNER JOIN order_detail ON `order`.id = order_detail.order_id WHERE user_id =:u order by order_date DESC ";
+		$sql = "SELECT `order`.*,COUNT(X.pid) as nump,X.numkey
+				FROM `order`,(SELECT order_detail.order_id,order_detail.product_id as pid,COUNT(keylist.code) AS numkey
+							FROM order_detail,keylist
+							WHERE order_detail.order_id=keylist.order_id
+							GROUP BY order_detail.order_id,order_detail.product_id
+					 		) AS X 
+				WHERE `order`.`id`=X.order_id AND `order`.user_id=:u
+				GROUP BY `order`.id
+				ORDER BY order_date DESC";
 		$stmt = DB::getInstance()->prepare($sql);
 		$stmt->bindParam(":u", $id);
 		$stmt-> execute();

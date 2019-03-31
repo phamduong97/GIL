@@ -53,9 +53,8 @@
                   <thead>
                     <tr>
                       <th>Mã đơn hàng</th>
-                      <th>Mã sản phẩm</th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
+                      <th>Số loại game</th>
+                      <th>Số lượng key</th>
                       <th>Ngày đặt hàng</th>
                     </tr>
                   </thead>
@@ -64,10 +63,9 @@
                         foreach ($orders as $k => $v) {
                      ?>
                     <tr>
-                      <td><?php echo $v['order_id']; ?></td>
-                      <td><?php echo $v['product_id']; ?></td>
-                      <td><?php echo $v['unitprice']; ?></td>
-                      <td><?php echo $v['quantity']; ?></td>
+                      <td><?php echo $v['id']; ?></td>
+                      <td><?php echo $v['nump']; ?></td>
+                      <td><?php echo $v['numkey']; ?></td>
                       <td><?php echo $v['order_date']; ?></td>
                     </tr>
                   <?php } ?>

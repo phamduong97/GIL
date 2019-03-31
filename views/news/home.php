@@ -107,8 +107,13 @@
     </div>
 </div>
 <div class="videonews container">
-    <div style="color: red;font-size: 22px;border-bottom: 2px solid grey;
-    padding-bottom: 10px;text-align: center;padding-top: 10px;border-top: 2px solid grey;"><b>VIDEO GAME NỔI BẬT</b></div>
+    <div style="    color: red;
+    font-size: 22px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 2px solid white;"><b>VIDEO GAME NỔI BẬT</b></div>
     <div class="row" style="margin-top: 20px;">
         <div class="col-lg-4 video">
             <iframe width="100%" height="300" src="https://www.youtube.com/embed/Rp2LOwdgjzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

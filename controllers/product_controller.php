@@ -13,7 +13,7 @@ class ProductController extends BaseController{
             "path"=>rootPath."?controller={$_GET['controller']}&action={$_GET['action']}",
             "pathtext"=>"Tìm kiếm"
         );
-        $data['keyword'] = isset($_POST['keyword'])?$_POST['keyword']:"";
+        $data['keyword'] = isset($_GET['keyword'])?$_GET['keyword']:(isset($_POST['keyword'])?$_POST['keyword']:"");
         $data['product'] = Product::searchProducts(array(
             "keyword"=> $data['keyword'],
             "category"=>0,
@@ -22,19 +22,18 @@ class ProductController extends BaseController{
             "sortmode"=>1
         ));
         $data['category']=Category::getAllCategory();
-        $data['keyword'] = isset($_POST['keyword'])?$_POST['keyword']:"";
+        $data['keyword'] = isset($_GET['keyword'])?$_GET['keyword']:"";
         $this->render("search",$data);
     }
     public function getProducts(){
         $data = array(
-            "keyword"=>$_POST['keyword'],
-            "category"=>$_POST['category'],
-            "inwhere"=> $_POST['inwhere'],
-            "counter" => $_POST['counter'],
-            "sortmode"=>$_POST['sortmode']
+            "keyword"=>$_GET['keyword'],
+            "category"=>$_GET['category'],
+            "inwhere"=> $_GET['inwhere'],
+            "counter" => $_GET['counter'],
+            "sortmode"=>$_GET['sortmode']
         );
         $result = Product::searchProducts($data);
-        
         print_r(json_encode($result));
     }
     public function view(){
@@ -51,6 +50,12 @@ class ProductController extends BaseController{
             $data['title']=$data['data']['name'];
             $data['pathtext']=$data['data']['name'];
             $this->render("view",$data);
+        }
+    }
+    public function comment(){
+        if(isset($_GET['pro_id'])){
+            $comment = Product::getComment($_GET['pro_id']);
+            print_r(json_encode($comment));
         }
     }
     // public function addcart(){
@@ -79,5 +84,19 @@ class ProductController extends BaseController{
     //         echo "Không thể thêm vào giỏ";
     //     }
     // }
+    public function addcomment()
+    {
+        $result = Product::addComment($_GET['pro_id'],$_GET['content'],$_SESSION['userid']);
+        return $result;
+    }
+    public function delcomment()
+    {
+        if(isset($_GET['id'])){
+            $result = Product::delComment($_GET['id']);
+            return $result;
+        }else{
+            return "get no id";
+        }
+    }
 }
 ?>

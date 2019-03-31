@@ -7,7 +7,7 @@
     ?>
 
     <div class="col-md-9">
-        <h4 class="text-center" style=""><?=$data['name']?></h4>
+        <h4 class="text-center title" style=""><?=$data['name']?></h4>
         <div id="p-image">
             <div class="pfw-image">
                 <img src="<?=$imageroot.$image_arr[0]?>" alt="">
@@ -64,7 +64,7 @@
                             </tr>
 
                             <tr>
-                                <th>Cấu hình tối thiểu</th>
+                                <th>Cấu hình đề nghị</th>
                                 <td colspan=3>
                                 <?php
                                 $minConfig = explode(";",$data['config']);
@@ -79,10 +79,6 @@
                                 ?>
                                 </td>
                             </tr>
-                            <tr>
-                                <th>Cấu hình đề nghị</th>
-                                <td colspan=3>Đây là cấu hình Đề nghị</td>
-                            </tr>
                         </tbody>
                     </table>                   
                 </div>
@@ -90,69 +86,34 @@
                     <div class="button-group">
                         <a href="https://steamcommunity.com" class="btn btn-primary w-100 text-left"><span class="fas fa-chevron-circle-right w-25"></span><span class="w-75">Đi tới steam</span></a>
                         <a href="<?=rootPath."?controller=checkout&action=cart"?>" class="btn btn-primary w-100 text-left"><span class="fas fa-chevron-circle-right w-25"></span></span class="w-75">Mua ngay</span></a>
-                        <a href="#" class="btn btn-primary w-100 text-left"><span class="fas fa-chevron-circle-right w-25"></span></span class="w-75">Thêm vào giỏ</span></a>
+                        <a class="btn btn-primary w-100 text-left" onclick="addcart('<?=$data['code']?>',null)"><span class="fas fa-chevron-circle-right w-25"></span></span class="w-75">Thêm vào giỏ</span></a>
                     </div>
                 </div>
             </div>
         </div>
         <div id="p-comment">
             <div class="editor">
-                <textarea name="comment-box" id="" cols="" rows="2" class="form-control"></textarea>
-                <!-- <script>CKEDITOR.replace("comment-box")</script> -->
-                <input type="button" value="Đăng" class="btn btn-success submit" name="commentBtn">
+                <?php
+                if(isset($_SESSION['logged_in'])){
+                    ?>
+                    <input type="text" hidden name="product_id" value=<?=$data['ID']?>>
+                    <textarea name="comment-box" id="comment-box" cols="" rows="2" class="form-control"></textarea>
+                    <script>
+                    // CKEDITOR.config.toolbar = []
+                    // CKEDITOR.replace('comment-box');
+                    </script>
+                    <input type="button" value="Đăng" class="btn btn-success w-100" name="commentBtn">
+                    <?php
+                }else{
+                    ?>
+                    <div class="alert alert-warning">Bạn phải đăng nhập để bình luận</div>
+                    <?php
+                }
+                ?>
+                
             </div>
             <div class="comment-box">
-                <div class="comment">
-                    <div class="c-avatar">
-                        <img src="assets/image/sticker(100).png" alt="">
-                    </div>
-                    <div style="width:80%;display:inline-block">    
-                        <div class="c-name">Menhera</div>
-                        <div class="c-text">Đúng là tuyệt phẩm!</div>
-                        <div class="c-rate">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="comment">
-                    <div class="c-avatar">
-                        <img src="assets/image/sticker(100).png" alt="">
-                    </div>
-                    <div style="width:80%;display:inline-block">    
-                        <div class="c-name">Menhera</div>
-                        <div class="c-text">Tao rút lại lời nói <(") Game như loz</div>
-                        <div class="c-rate">
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="comment">
-                    <div class="c-avatar">
-                        <img src="assets/image/sticker(100).png" alt="">
-                    </div>
-                    <div style="width:80%;display:inline-block">    
-                        <div class="c-name">Menhera</div>
-                        <div class="c-text">Xin lỗi chủ tịch :3</div>
-                        <div class="c-rate">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
         </div>
     </div>

@@ -14,19 +14,19 @@
             <!-- Slide -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://divineshop.vn/image/cache/catalog/banner/banner-nap-tien-824x470.png" alt="">
+                    <img src="assets/image/banner-nap-tien-824x470.png" alt="">
                 </div>
                 <div class="carousel-item">
                     <img src="assets/image/banner-824x470.png" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://divineshop.vn/image/cache/catalog/thẻ%20điện%20thoại/gui%20anh%20dong%20(1)-824x470.jpg" alt="">
+                    <img src="assets/image/gui%20anh%20dong%20(1)-824x470.jpg" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://divineshop.vn/image/cache/catalog/slide/bao-mat-2-lop-824x470.png" alt="">
+                    <img src="assets/image/bao-mat-2-lop-824x470.png" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://divineshop.vn/image/cache/catalog/Anh-san-pham/candy/11-824x470.png" alt="">
+                    <img src="assets/image/11-824x470.png" alt="">
                 </div>
             </div>
             <a href="#slider" class="carousel-control-prev" role="button" data-slide="prev">
@@ -39,28 +39,20 @@
                 <span class="fa fa-chevron-right"  style="font-size:40px"></span>
                 <span class="sr-only">Next</span>
             </a>
-            <script>
-                $('.carousel').carousel();
-            </script>
         </div>
-
+        <h4 style="border-bottom: 1px solid white">Game mới xuất bản</h4>
         <div class="swiper-container" id="net-list">
             <div class="swiper-wrapper">
                 <?php 
-                foreach ($data1 as $k => $v) {
+                foreach ($lastest as $k => $v) {
                     $image = explode(";", $v['image'])[0];
                 ?>
                     <div class="swiper-slide">
                         <div class="product">
                             <a href="?controller=product&action=view&code=<?php echo $v['code']; ?>">
                                 <div class="thumbnail">
-                                    <img src="assets/image/product/<?=$image?>" alt="">
-                                    <a class="fastbuybtn">MUA NGAY</a>
-                                    <a class="addcartbtn" href="?controller=carts&action=addcart&code=<?php echo $v['code']; ?>">THÊM VÀO GIỎ</a>
-                                </div>
+                                    <img src="assets/image/product/<?=$image?>" alt=""></div>
                                 <div class="label"><?=$v['name']; ?></div>
-                                <div class="price"><span style="color: grey;">SALE:</span><?php echo $v['sale']; ?> %</div>
-                                <div class="saleprice"><?=$v['price']; ?> VNĐ</div>
                             </a>
                         </div>
                     </div>
@@ -77,40 +69,41 @@
         <script>
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 3,
-                spaceBetween: 30,
+                spaceBetween: 10,
                 slidesPerGroup: 3,
                 loop: true,
-                loopFillGroupWithBlank: true,
+                loopFillGroupWithBlank: false,
                 autoplay: {
                 delay: 4000,
-                disableOnInteraction: false,
-            },
+                disableOnInteraction: true,
+                },
                 pagination: {
                 el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+                clickable: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
             });
         </script>
 
         <div class="group-feature">
-            <div class="feature-item-box container-fluid">
+            <h4 style="border-bottom: 1px solid white">Phổ biến trong ngày</h4>
+            <div class="feature-item-box">
                 <div class="row" id="net-list">
                     <?php 
                     foreach ($product as $key => $value) {
                         $image = explode(";", $v['image']);
                         ?>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-6">
                             <div class="product">
                                 <div class="thumbnail">
                                     <img src="assets/image/product/<?php $thumbnail=explode(";",$value['image'])[0];echo $thumbnail;?>" alt="Hình ảnh nào đó">
                                     <a class="addcartbtn" onclick="addcart('<?=$value['code']?>',undefined)">THÊM VÀO GIỎ</a>
                                     <a href="" class="fastbuybtn">MUA NGAY</a>
                                 </div>
-                                <div class="label"><a href="<?=rootPath."?controller=product&action=view&code={$value['code']}"?>"><?=$value['name']?></a></div>
+                                <div class="label"><a href="<?="?controller=product&action=view&code={$value['code']}"?>"><?=$value['name']?></a></div>
                                 <div class="price"><?=$value['price']?> VNĐ</div>
                                 <div class="saleprice"><?=$value['price']-($value['price']*$value['sale']/100)?> VNĐ</div>
                             </div>
@@ -162,22 +155,22 @@
         </div>
 
         <div style="margin: 20px auto;padding-top: 10px;border-top: 1px solid grey;">
-            <div style="margin: 10px auto;padding-left: 100px;">
-                <marquee width="80%" " >Ra mắt GTA 5 2019 phiên bản cực chất cho game thủ.</marquee>
+            <div style="margin: 10px auto;padding: 0 10px">
+                <marquee width="100%">Ra mắt GTA 5 2019 phiên bản cực chất cho game thủ.</marquee>
             </div>
-            <iframe width="95%" height="315" src="https://www.youtube.com/embed/VjZ5tgjPVfU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%%" height="315" src="https://www.youtube.com/embed/VjZ5tgjPVfU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <div class="outline" style="margin:20px 0;">
             <div class="row">
                 <div class="col-lg-6">
                     <a class="item" title="7 lý do mua game bản quyền">
-                        <img src="assets/image/7lydo.png" alt="" width="380px">
+                        <img src="assets/image/7lydo.png" alt="" style="width:100%">
                     </a>
                 </div>
                 <div class="col-lg-6">
                     <a class="item" title="Giao dịch trực tiếp">
-                        <img src="assets/image/giaodich.png" alt="" width="380px">
+                        <img src="assets/image/giaodich.png" alt="" style="width:100%">
                     </a>
                 </div>
             </div>
@@ -212,10 +205,10 @@
             </div>
         </div>
 
-        <div class="youtube" style="margin-left: 20px;">
+        <!-- <div class="youtube" style="margin-left: 20px;">
             <script src="https://apis.google.com/js/platform.js"></script>
             <div class="g-ytsubscribe" data-channelid="UCTkIV69UcZvXnfTqL-oqpJg" data-layout="full" data-count="default">
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

@@ -1,16 +1,16 @@
 /* Footer */
 #footer{
-    min-height: 50px;
-    background-color: rgb(44, 44, 44);
-    padding-top: 10px
-  }
+  min-height: 50px;
+  background-color: rgb(8, 8, 8);
+  padding-top: 10px;
+}
 
-  .f-item-label{
-    font-size: 15pt;
-    padding:5px 0;
-    border-bottom: 1px solid rgb(165, 165, 165)
-  }
-  .f-item-content{
-    font-size: 11pt;
-    padding:5px 0;
-  }
+.f-item-label{
+  font-size: 15pt;
+  padding:5px 0;
+  border-bottom: 1px solid rgb(165, 165, 165)
+}
+.f-item-content{
+  font-size: 11pt;
+  padding:5px 0;
+}

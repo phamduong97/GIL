@@ -1,5 +1,15 @@
+$(document).ready(function(){
+    if(sessionStorage.getItem('fmail')!=null){
+        $('[name=friendmail]').val(sessionStorage.getItem('fmail'));
+    }
+    $('[name=friendmail]').bind('change',function(){
+        sessionStorage.setItem('fmail',$(this).val());
+        console.log(sessionStorage);
+    })
+})
+
 function addcart(code,obj){
-    if(obj==undefined){
+    if(obj==null){
         $.ajax({
             url:"http://localhost/gil/?controller=cart&action=addcart",
             type:"post",
@@ -68,13 +78,3 @@ function addVoucher(){
         }
     })
 }
-
-$(document).ready(function(){
-    if(sessionStorage.getItem('fmail')!=null){
-        $('[name=friendmail]').val(sessionStorage.getItem('fmail'));
-    }
-    $('[name=friendmail]').bind('change',function(){
-        sessionStorage.setItem('fmail',$(this).val());
-        console.log(sessionStorage);
-    })
-})

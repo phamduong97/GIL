@@ -1,7 +1,7 @@
 <?php
 include "controllers/base_controller.php";
-include "models/Cart.php";
-include "models/Product.php";
+include_once "models/Cart.php";
+include_once "models/Product.php";
 class CartController extends BaseController{
     public function __construct()
     {    
@@ -62,6 +62,9 @@ class CartController extends BaseController{
         }
     }
     public function checkout(){
+        if(!isset($_SESSION['logged_in'],$_SESSION['cart'])){
+            header('location: ?controller=account&action=login&checkout=1');
+        }
         $data= array(
             "title"=>"Đơn hàng",
             "path"=>"",
@@ -86,23 +89,29 @@ class CartController extends BaseController{
     }
     public function order(){
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['cart']) ){
-            $result = Cart::addOrder();
-            if($result){
-                $data = array(
-                    "path"=>"",
-                    "pathtext"=>"Đơn hàng",
-                    "title"=>"Đơn hàng"
-                );
-                $this->render("order",$data);
+            $total = 0;
+            foreach ($_SESSION['cart'] as $key => $value) {
+                $total = $value['price']*$value['quantity'];
+            }
+            if($total>$_SESSION['usermoney']){
+                header("?controller=cart&action=checkout&error=outbalance");
             }else{
-                header('location: index.php');
+                $result = Cart::addOrder();
+                if($result){
+                    $data = array(
+                        "path"=>"",
+                        "pathtext"=>"Đơn hàng",
+                        "title"=>"Đơn hàng"
+                    );
+                    $this->render("order",$data);
+                }else{
+                    header('location: index.php');
+                }
             }
         }else{
             header('location: index.php');
         }
         
     }
-    
-    
 }
 ?>

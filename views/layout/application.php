@@ -17,6 +17,7 @@
     <script src="ckeditor/ckeditor.js"></script>
     <script src="assets/js/buy.js"></script>
     <script src="assets/js/search.js"></script>
+    <script src="assets/js/comment.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>

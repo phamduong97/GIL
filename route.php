@@ -2,9 +2,9 @@
 $controlList = array(
     'home'=>['index','intro','copyright','security','term','loginmember','logout'],
     'account'=>['login','forgetpass','sendmail','resetpass',
-                'changepass','accountmanager','processaddmoney','register',
+                'changepass','accountmanager','addmoney','processaddmoney','register',
                 'registermember','news','newdetail','order'],
-    'product'=>['search','view','getProducts'],
+    'product'=>['search','view','getProducts','comment','addcomment','delcomment'],
     'support'=>['faq','maintance','ticket','search'],
     'cart'=>['view','destroycart','checkout','voucher','addcart','order'],
     'news'=>['home','detail','comment']

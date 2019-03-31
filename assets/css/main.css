@@ -1,5 +1,5 @@
 body{
-  color: rgb(221, 221, 221)
+  color: rgb(255, 255, 255);
 }
 
 a{
@@ -8,31 +8,31 @@ a{
 
 a:hover{
   text-decoration: none;
-  color: rgb(206, 206, 206)
+  color: rgb(255, 255, 255);
 }
 
 
 /* Header--------------------- */
 #header{
-  min-height: 100px;
+  /* height: 180px; */
   background-image: url("../image/pic2.jpg");
   background-repeat: no-repeat;
   background-position: center -220px;
-  padding: 20px 0
+  padding: 20px 0;
+  background-size: cover;
 }
 
-#logo{
-}
+#logo{/* height: 100%; */}
 
 #logo img{
-  width: 50%;
-  transition: ease 1.6s
+  width: 80%;
+  /* transition: ease 1.6s */
 }
 #logo img:hover{
   transform: rotate(270deg)
 }
-#search-box{ 
-  padding-top: 50px
+#search-box{
+  padding-top: 50px;
 }
 
 #inputsearch{
@@ -41,7 +41,8 @@ a:hover{
 }
 
 #login{
-  text-align: right   
+  text-align: right;
+  text-shadow: 1px 1px 2px black;
 }
 #hcontact{
   padding-top: 30px
@@ -129,12 +130,15 @@ a {
 /* Main */
 #main{
   min-height: 500px;
-  background-color: rgb(109, 109, 109);
-  padding: 20px 0
+  /* background-color: rgb(220, 229, 255); */
+  background-image: url("/GIL/assets/image/5992.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 20px 0;
 }
 
 #main .container{
-  background-color: #242424;
+  background-color: #000000bf;
   border-radius: 10px;
   padding-bottom: 10px;
   /* margin-bottom: 15px */
@@ -157,22 +161,15 @@ a {
 #p-search-bar{
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 3px solid #6d6d6d;
+  border-bottom: 3px solid #ffffff;
 }
 
 #p-sort-bar{
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 3px solid #6d6d6d;
+  border-bottom: 3px solid #ffffff;
 }
 #p-search-list{
   padding-top: 10px;
   position: relative;
 }
-
-
-  
-
-  
-  
-  

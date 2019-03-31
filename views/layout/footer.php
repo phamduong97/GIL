@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="f-item-label">Fanpage</div>
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fisthisweebpage%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=192620087989897"
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjust.need.kawaii%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=192620087989897"
                         width="100%" height="200" style="border:none;overflow:hidden;margin-top:10px"
                         scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media">
                     </iframe>

@@ -122,15 +122,8 @@
                     });
                 });
 </script>
-<div id="register" class="container-fluid">
- <div class="container">
-   <div class="row" >
+<div class="row" id="register" >
     <div class="col-lg-9 rightRegister">
-        <div class="path">
-            <span><a href="" title="Trang Chủ"><i class="fa fa-home"></i></a></span>&nbsp;/
-            <span><a href="">Tài khoản</a></span>&nbsp;/
-            <span><a href="">Đăng ký</a></span>
-        </div>
         <div style="clear: both;"></div>
         <div class="content">
             <h4 style="color: orange;">Đăng ký tài khoản</h4>
@@ -145,7 +138,7 @@
                     <p style="color: red;" id="lbName"></p>
                 </div>
                 <div class="form-group form1" >
-                    <label >Họ và chữ lót:</label>
+                    <label >Họ và tên</label>
                     <input type="text" class="form-control" id="txtHo" placeholder="Hãy nhập họ và chữ lót" name="fullname" style="width: 400px;">
                     <p style="color: red;" id="lbHo"></p>
                 </div>
@@ -175,7 +168,7 @@
                 ?>
                     <script>window.alert("Đăng ký tài khoản thành công");</script>
                 <?php
-                 }
+                }
                 ?>
                 <button class="btn btn-warning btnResgiter">Đăng ký tài khoản</button>
             </form>
@@ -193,7 +186,5 @@
             <li><a href="#">Đơn hàng</a></li>
         </ul>
     </div>
-</div>
-</div>
-</div>                     
+</div>                   
 <div class="clearfix"></div>

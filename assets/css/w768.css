@@ -1,26 +1,67 @@
 @media screen and (max-width:768px){
-    #logo{
-      text-align: center
-    }
-    #search-box{
-      padding-top: 10px;
-      padding-bottom: 10px
-    }
-    #login{
-      text-align: center
-    }
-    #hcontact{
-      padding-top: 5px
-    }
-    #left-section{
-      display: none
-    }
-    .rightLogin .content form{margin-left: 0px;}
-    .rightLogin .content .form1 label{width: 183px;}
-    .rightLogin .content .form1 input {width: 273px!important;}
-    .rightLogin .content .form2 label{width: 79px;}
-    .rightLogin .content .form2 input{width: 273px!important;}
-    .rightLogin .content .form2 div{width: 121px;}
-    .rightLogin .content form button {width: 275px;}
-
+  #logo{
+    text-align: center
   }
+  #search-box{
+    padding-top: 10px;
+    padding-bottom: 10px
+  }
+  #login{
+    text-align: center
+  }
+  #hcontact{
+    padding-top: 5px
+  }
+  #left-section{
+    display: none
+  }
+  #slider{
+    display: none
+  }
+  .swiper-container{
+    display: none
+  }
+  .rightLogin .content form{margin-left: 0px;}
+  .rightLogin .content .form1 label{width: 183px;}
+  .rightLogin .content .form1 input {width: 273px!important;}
+  .rightLogin .content .form2 label{width: 79px;}
+  .rightLogin .content .form2 input{width: 273px!important;}
+  .rightLogin .content .form2 div{width: 121px;}
+  .rightLogin .content form button {width: 275px;}
+
+  #navigator{
+    display: none
+  }
+  #logo{
+    display: none;
+  }
+  #header{
+    background-image: unset;
+    background-color: #292929
+  }
+  #navigator-m{
+    display: block;
+    position: relative;
+    height: 60px;
+    background-color: #1b1b1b;
+    text-align: center;
+  }
+  #navigator-m button{
+    /* position: absolute; */
+    /* top: 20%; */
+    /* left: 50%; */
+    width: 50%;
+    margin-top: 10px;
+  }
+  #navigator-m .nav-box{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  #navigator-m .nav-item{
+    padding: 15px 0;
+    width: 100%;
+    background-color: #5675d0;
+    border-top: 1px solid white;
+  }
+}

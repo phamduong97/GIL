@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3" id="logo">
+                <div class="col-lg-2" id="logo">
                     <a href="?controller=home&action=index"><img src="assets/image/logo2.jpg" alt="" style="border-radius: 50%;"></a>
                 </div>
                 <div class="col-lg-6" id="search-box">
@@ -15,28 +15,30 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-3" id="login">
+                <div class="col-lg-4" id="login">
                     <?php
                         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true &&$_SESSION['user']==true){
                     ?>
-                        <div class="row" >
-                            <div class="col-lg-5"><a href="?controller=account&action=accountmanager"><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $_SESSION['username']; ?></a></div>
-                            <div class="col-lg-7"><a href="?controller=home&action=logout">Đăng Xuất</a></div>
+                        <div class="row" style="margin-bottom:5px">
+                            <div class="col-lg-12"><a href="?controller=account&action=accountmanager">
+                                <i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $_SESSION['username']; ?></a>
+                                <a class="btn btn-danger btn-sm" href="?controller=home&action=logout">Đăng Xuất</a>
+                            </div>
                         </div>
-                        <div class="row" style="font-size: 14px;color:#09f508;">
+                        <div class="row" style="font-size: 14px;color:#09f508;margin-bottom:5px">
                             <div class="col-lg-5"><a href="?controller=account&action=addmoney&id=<?php echo $_SESSION['userid'];?>" style="color:#09f508; "><b>NẠP TIỀN</b>&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></a></div>
                             <div class="col-lg-7"><b>SỐ DƯ</b>：<?php echo $_SESSION['usermoney']; ?> VNĐ</div>
                         </div>
                     <?php 
                         }else{
                     ?>
-                    <a href="?controller=account&action=login">Đăng nhập</a> | <a href="?controller=account&action=register">Đăng ký</a>
+                    <a class="btn btn-sm btn-danger" href="?controller=account&action=login">Đăng nhập</a> | <a href="?controller=account&action=register">Đăng ký</a>
                     <?php 
                         }
                         ?>
-                    <div style="font-size: 14px;">
+                    <div style="font-size: 14px;margin-bottom:5px">
                         <span><i class="fa fa-phone"></i>&nbsp;&nbsp;19006969</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span><i class="fa fa-envelope"></i>&nbsp;&nbsp;gilshop@gmail.com</span>
+                        <a href="mailto:gilshop@gmail.com"><i class="fa fa-envelope"></i>&nbsp;&nbsp;gilshop@gmail.com</a>
                     </div>
                     <div id="mycart">
                         <i class="fa fa-shopping-bag" style="color: orange;"></i>       
